@@ -12,7 +12,7 @@ const MessageForm = (props) => {
         name='body'
         placeholder='Type a message...'
       />
-      <button type='button'>Send</button>
+      <button type='submit'>Send</button>
     </form>
   );
 }
