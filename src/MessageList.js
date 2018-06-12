@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { EMSGSIZE } from 'constants';
+
+import Message from './Message'
 
 const MessageList = () => {
   const messages = [
@@ -17,7 +18,9 @@ const MessageList = () => {
 
   return(
     <div className="MessageList">
-      {messages.map(mssg => <div>{mssg.userName}: {mssg.body}</div>)}
+      {messages.map(mssg => (
+        <Message key={mssg.id} message={mssg} />
+      ))}
     </div>
   )
 }
