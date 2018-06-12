@@ -24,12 +24,26 @@ class Chat extends Component{
       ]
     }
   }
+
+  addMessage = () => {
+    // making a deep copy using [...arrayName]
+    const messages = [...this.state.messages]
+    messages.push({
+      id: Date.now(),
+      userName: "Jieun",
+      body: "I'm excited for dinner",
+    })
+
+    // {messages: messages} not required because variable name == tag name
+    this.setState({messages});
+  }
+
   render(){
     return(
       <div className="Chat">
         <ChatHeader />
         <MessageList messages={this.state.messages} />
-        <MessageForm />
+        <MessageForm addMessage={this.addMessage}/>
       </div>
     );
   }
