@@ -25,13 +25,14 @@ class Chat extends Component{
     }
   }
 
-  addMessage = () => {
+  addMessage = (body) => {
     // making a deep copy using [...arrayName]
     const messages = [...this.state.messages]
     messages.push({
       id: Date.now(),
       userName: "Jieun",
-      body: "I'm excited for dinner",
+      body: body,
+      // or just "body"
     })
 
     // {messages: messages} not required because variable name == tag name
