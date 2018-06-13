@@ -14,7 +14,7 @@ const ChatHeader = () => {
 export default ChatHeader;
 
 const styles = {
-//.ChatHeader
+  //.ChatHeader
   chatHeader: {
     backgroundColor: "#f3f3f3",
     borderBottom: "1px solid #ccc",
@@ -22,16 +22,16 @@ const styles = {
     padding: "0 1rem",
     display: "flex",
     alignItems: "center"
-},
-//.ChatHeader .roomInfo h2
+  },
+  //.ChatHeader .roomInfo h2
   roomH2: {
     fontSize: "1.1rem",
     margin: "0"
-},
-//.ChatHeader .roomInfo p
+  },
+  //.ChatHeader .roomInfo p
   roomP: {
     color: "#999",
     margin: "0",
     fontSize: "0.8rem"
-}
+  }
 }
