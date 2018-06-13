@@ -51,7 +51,7 @@ const styles = {
     borderRadius: "0.5rem",
     margin: "0.25rem",
     padding: "0"
-},
+  },
   //.MessageForm .chatIcon
   chatIcon: {
     display: "flex",
@@ -61,17 +61,14 @@ const styles = {
     color: "#ccc",
     padding: "0 0.5rem",
     fontSize: "1.2rem"
-},
+  },
   //.MessageForm input
   input: {
     flex: "1",
     fontSize: "1.2rem",
-    border: "0"
-},
-  //.MessageForm input:focus
-  inputFocus: {
+    border: "0",
     outline: "0"
-},
+  },
   //.MessageForm button
   button: {
     fontSize: "1.5rem",
