@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Avatar from './Avatar'
+import SignOut from './SignOut'
 
 // same as this: const UserInfo = (props) => {
 // const {user, userName} = props is possible, destructing it.
@@ -14,7 +15,7 @@ const UserInfo = ({userName}) => {
         {userName}
       </div>
       <a href="#" style={styles.a}>
-        <i className="fas fa-sign-out-alt"></i>
+        <SignOut />
       </a>
     </div>
   );
