@@ -6,7 +6,7 @@ import UserInfo from './UserInfo'
 const Sidebar = (props) => {
   return(
     <aside className="Sidebar" style={styles.sidebar}>
-      <UserInfo user={props.user} stype={styles.children}/>
+      <UserInfo user={props.user} style={styles.children}/>
       <h1 style={{
         ...styles.children,
         ...styles.h1
