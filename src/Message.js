@@ -9,7 +9,7 @@ const Message = (props) => {
       <Avatar />
       <div className="details" style={styles.messageDetails}>
         <Metadata message={props.message}/>        
-        <div class="body">
+        <div className="body">
           : {props.message.body}    
         </div>
       </div>

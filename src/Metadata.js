@@ -3,11 +3,11 @@ import React from 'react'
 const Metadata = (props) => {
   return(
     <div className="Metadata" style={styles.metadata}>
-      <div class="user" style={styles.user}>
+      <div className="user" style={styles.user}>
         {props.message.userName}
       </div>
       {/* time not set yet */}
-      <div class="time" style={styles.time}>
+      <div className="time" style={styles.time}>
       </div>
     </div>
   );
