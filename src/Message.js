@@ -1,9 +1,24 @@
 import React from 'react'
 
+import Avatar from './Avatar'
+
 const Message = (props) => {
   return(
     <div className="Message" style={styles.message}>
-      {props.message.userName}: {props.message.body}
+      <Avatar />
+      <div className="details" style={styles.messageDetails}>
+        <div class="Metadata">
+          <div class="user">{props.message.userName}</div>
+          {/* time not set yet */}
+          <div class="time"></div>
+        </div>
+        <div class="body">
+          : {props.message.body}    
+        </div>
+      </div>
+
+
+        
     </div>
   );
 }
