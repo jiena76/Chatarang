@@ -22,6 +22,9 @@ class MessageForm extends Component{
       onSubmit={this.handleSubmit}
       style={styles.messageForm}>
 
+        <div className="chatIcon" style={styles.chatIcon}>
+          <i className="fas fa-comment-alt"></i>
+        </div>
         <input 
           type="text"
           name='body'
@@ -31,7 +34,9 @@ class MessageForm extends Component{
           style={styles.input}
           autoFocus
         />
-        <button type='submit' style={styles.button}>Send</button>
+        <button type='submit' style={styles.button}>
+            <i class="far fa-paper-plane" title="Send"></i>
+        </button>
       </form>
     );
   }
