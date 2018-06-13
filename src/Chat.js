@@ -41,7 +41,7 @@ class Chat extends Component{
 
   render(){
     return(
-      <div className="Chat">
+      <div className="Chat" styles={styles}>
         <ChatHeader />
         <MessageList messages={this.state.messages} />
         <MessageForm addMessage={this.addMessage}/>
@@ -51,3 +51,9 @@ class Chat extends Component{
 }
 
 export default Chat;
+
+const styles = {
+  flex: "1",
+  display: "flex",
+  flexDirection: "column"
+}
