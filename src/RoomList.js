@@ -1,15 +1,16 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite';
 
 const RoomList = () => {
   return(
     <nav className="RoomList">
-      <h2 style={styles.h2}>Rooms</h2>
-      <ul style={styles.ul}>
-        <li style={styles.li}>
-          <a href="#" style={styles.liA}>general</a>
+      <h2 className={css(styles.h2)}>Rooms</h2>
+      <ul className={css(styles.ul)}>
+        <li className={css(styles.li)}>
+          <a href="#" className={css(styles.liA)}>general</a>
         </li>
-        <li style={styles.li}>
-          <a href="#" style={styles.liA}>random</a>
+        <li className={css(styles.li)}>
+          <a href="#" className={css(styles.liA)}>random</a>
         </li>
       </ul>
     </nav>
@@ -18,7 +19,7 @@ const RoomList = () => {
 
 export default RoomList;
 
-const styles = {
+const styles = StyleSheet.create({
   //.RoomList h2
   h2: {
     fontSize: "1rem"
@@ -37,14 +38,14 @@ const styles = {
   liA: {
     display: "block",
     color: "whitesmoke",
-    textDecoration: "none"
-  },
-  //.RoomList li a::before
-  liABefore: {
-    content: "'# '"
-  },
-  //.RoomList li a:hover
-  liAHover: {
-    backgroundColor: "rgba(255, 255, 255, 0.2)"
+    textDecoration: "none",
+
+    ":before": {
+      content: "'# '"
+    },
+
+    ":hover": {
+      backgroundColor: "rgba(255, 255, 255, 0.2)"
+    }
   }
-}
+})
