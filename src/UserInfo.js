@@ -2,14 +2,16 @@ import React from 'react'
 
 import Avatar from './Avatar'
 
-const UserInfo = (props) => {
+// same as this: const UserInfo = (props) => {
+// const {user, userName} = props is possible, destructing it.
+const UserInfo = ({userName}) => {
   return(
     <div className="UserInfo" style={styles.userInfo}>
       <div style={styles.avatar}>
         <Avatar />
       </div>
       <div className="user" style={styles.user}>
-        {props.user.userName}
+        {userName}
       </div>
       <a href="#" style={styles.a}>
         <i className="fas fa-sign-out-alt"></i>
