@@ -5,7 +5,9 @@ import Avatar from './Avatar'
 const UserInfo = (props) => {
   return(
     <div className="UserInfo" style={styles.userInfo}>
-      <Avatar style={styles.avatar}/>
+      <div style={styles.avatar}>
+        <Avatar />
+      </div>
       <div className="user" style={styles.user}>
         {props.user.userName}
       </div>
@@ -27,7 +29,8 @@ const styles = {
   },
 //.UserInfo .Avatar
   avatar: {
-    marginRight: "0.5rem"
+    marginRight: "0.5rem",
+    marginTop: "0.5rem"
   },
 //.UserInfo .user
   user: {

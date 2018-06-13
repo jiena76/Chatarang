@@ -5,6 +5,11 @@ import Message from './Message'
 const MessageList = (props) => {
   return(
     <div className="MessageList" style={styles.messageList}>
+      <div class="roomAnnouncement" style={styles.roomAnnounce}>
+        <h3 style={styles.roomH3}>#general</h3>
+        <p>This is the very beginning of the #general room.</p>
+      </div>
+
       {props.messages.map(mssg => (
         <Message key={mssg.id} message={mssg} />
       ))}
