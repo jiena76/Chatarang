@@ -10,19 +10,16 @@ class Chat extends Component{
     super()
 
     this.state = {
-      messages: [
-        {
-          id: 1,
-          userName: 'dstrus',
-          body: 'Strawberry.'
-        },
-        {
-          id: 2,
-          userName: 'dplazzo',
-          body: 'This guy is so annoying, I hate my job.'
-        }
-      ]
+      messages: []
     }
+  }
+
+  componentDidMount(){
+    base.syncStarts('terry', {
+      context: this,
+      state: "messages",
+      asArray: true,
+    })
   }
 
   addMessage = (body) => {
