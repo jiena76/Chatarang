@@ -12,6 +12,7 @@ const Avatar = () => {
 export default Avatar;
 
 const styles = {
+  background: 'url(https://api.adorable.io/avatars/32/davey@getfretless.com)',
   height: "40px",
   width: "40px",
   fontSize: "1rem",

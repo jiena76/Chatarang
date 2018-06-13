@@ -6,8 +6,9 @@ const Metadata = (props) => {
       <div className="user" style={styles.user}>
         {props.message.userName}
       </div>
-      {/* time not set yet */}
+      {/* time not set yet, hardcoded */}
       <div className="time" style={styles.time}>
+        1:12 PM
       </div>
     </div>
   );

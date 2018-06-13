@@ -6,17 +6,20 @@ import UserInfo from './UserInfo'
 const Sidebar = (props) => {
   return(
     <aside className="Sidebar" style={styles.sidebar}>
-      <UserInfo user={props.user} style={styles.children}/>
-      <h1 style={{
-        ...styles.children,
-        ...styles.h1
-        }}>
+      <UserInfo user={props.user} />
+      <h1 style={styles.h1}>
         XTBC 18
       </h1>
       <RoomList />
     </aside>
   )
 }
+
+{/* adding multiple styles
+  <h1 style={{
+  ...styles.children,
+  ...styles.h1
+  }}> */}
 
 const styles = {
   sidebar: {
@@ -26,14 +29,9 @@ const styles = {
     padding: "1rem 0",
     display: "flex",
     flexDirection: "column",
-  },
-  
-  // "> *" descendants of sidebar
-  // sidebar > *
-  children: {
     padding: "0 1rem"
   },
-  
+  //.Sidebar h1
   h1: {
     color: "white",
     fontSize: "1.2rem",

@@ -15,18 +15,18 @@ const MessageList = (props) => {
 export default MessageList;
 
 const styles = {
-//.MessageList
+  //.MessageList
   messageList: {
     backgroundColor: "white",
     flex: "1",
     paddingBottom: "1rem",
     overflowY: "scroll"
   },
-//.MessageList .roomAnnouncement
+  //.MessageList .roomAnnouncement
   roomAnnounce: {
     padding: "2rem 1rem"
   },
-//.MessageList .roomAnnouncement h3
+  //.MessageList .roomAnnouncement h3
   roomH3: {
     fontSize: "1.5rem"
   }
