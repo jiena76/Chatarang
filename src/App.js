@@ -2,19 +2,35 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Main from './Main'
+import SignIn from './SignIn'
 
 class App extends Component {
-state = {
-  user: {
-    ID: '1234',
-    userName: 'chris',
+  state = {
+    user: {}
   }
-}
+
+  signedIn = () => {
+    return this.state.user.ID;
+  }
+
+  handleAuth = () => {
+    this.setState.user = {
+      ID: '1234',
+      userName: 'chris',
+      email: 'chris97@gmail.com',
+    }
+  }
 
   render() {
     return (
       <div className="App">
-        <Main user={this.state.user}/>
+        {
+          /* if ther user is returned(exists),
+          then open main, else open "sign in" page */
+          this.signedIn()
+            ? <Main user={this.state.user}/>
+            : <SignIn />
+        }
       </div>
     );
   }
