@@ -35,7 +35,7 @@ class MessageForm extends Component{
           autoFocus
         />
         <button type='submit' style={styles.button}>
-            <i class="far fa-paper-plane" title="Send"></i>
+            <i className="far fa-paper-plane" title="Send"></i>
         </button>
       </form>
     );

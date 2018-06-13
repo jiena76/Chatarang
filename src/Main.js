@@ -18,7 +18,6 @@ class Main extends Component{
 const styles = {
   display: 'flex',
   alignItems: 'stretch',
-  width: '100vw',
   height: '100vh'
 }
 
