@@ -5,6 +5,7 @@ import SignOut from './SignOut'
 
 // same as this: const UserInfo = (props) => {
 // const {user, userName} = props is possible, destructing it.
+// {user, ...props} = user and (props - user)
 const UserInfo = ({user}) => {
   return(
     <div className="UserInfo" style={styles.userInfo}>

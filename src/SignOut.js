@@ -3,7 +3,10 @@ import { StyleSheet, css } from 'aphrodite';
 
 const SignOut = () => {
   return(
-    <button className={css(styles.button)}>
+    <button 
+      className={css(styles.button)}
+      onclick={SignOut}
+    >
       <i className="fas fa-sign-out-alt"></i>
     </button>
   );

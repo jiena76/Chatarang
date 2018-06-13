@@ -13,12 +13,14 @@ class App extends Component {
     return this.state.user.ID;
   }
 
-  handleAuth = () => {
-    this.setState.user = {
-      ID: '1234',
-      userName: 'chris',
-      email: 'chris97@gmail.com',
-    }
+  handleAuth = (user) => {
+    this.setState({user})
+
+    // this.setState.user = {
+    //   ID: '1234',
+    //   userName: 'chris',
+    //   email: 'chris97@gmail.com',
+    // }
   }
 
   render() {
@@ -29,7 +31,7 @@ class App extends Component {
           then open main, else open "sign in" page */
           this.signedIn()
             ? <Main user={this.state.user}/>
-            : <SignIn />
+            : <SignIn handleAuth={this.handleAuth}/>
         }
       </div>
     );
