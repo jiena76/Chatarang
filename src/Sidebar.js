@@ -1,10 +1,13 @@
 import React from 'react'
 
+import Avatar from './Avatar'
+
+
 const Sidebar = (props) => {
   return(
     <aside className="Sidebar" style={styles.sidebar}>
       <div className="UserInfo" style={styles.children}>
-        <div className="Avatar"></div>
+        <Avatar />
         <div className="user">
           {props.user.userName}
         </div>
@@ -18,13 +21,7 @@ const Sidebar = (props) => {
         }}>
         XTBC 18
       </h1>
-      <nav className="RoomList">
-        <h2>Rooms</h2>
-        <ul>
-          <li><a href="#">general</a></li>
-          <li><a href="#">random</a></li>
-        </ul>
-      </nav>
+      
     </aside>
   )
 }
