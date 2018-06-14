@@ -14,6 +14,8 @@ const SignOut = () => {
 
 export default SignOut;
 
+// when both className and css stylesheet is added:
+// className={`MessageForm ${css(styles.form)}`}
 const styles = StyleSheet.create({
   button: {
     backgroundColor: 'transparent',
