@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
 import RoomLink from './RoomLink'
-// import RoomForm from './RoomForm'
+import RoomForm from './RoomForm'
 import base from './base'
 
 class RoomList extends Component {
@@ -50,7 +50,7 @@ class RoomList extends Component {
   }
   
   render() {
-    /*
+    
     if (this.state.showRoomForm) {
       return (
         <RoomForm
@@ -59,7 +59,7 @@ class RoomList extends Component {
         />
       )
     } else {
-      */
+      
       return (
         <nav
           className={`RoomList ${css(styles.nav)}`}

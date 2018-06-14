@@ -19,12 +19,12 @@ class Chat extends Component{
   componentWillMount() {
     this.syncMessages();
   }
-
+/*
   componentDidMount(prevProps) {
     if(prevProps.room.name !== this.props.room.name){
       this.syncMessages();
     }
-  }
+  }*/
 
   syncMessages = () => {
     // https://github.com/tylermcginnis/re-base#syncstateendpoint-options
