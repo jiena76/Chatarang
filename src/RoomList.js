@@ -1,17 +1,16 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
+import RoomLink from './RoomLink'
+
 const RoomList = () => {
   return(
     <nav className="RoomList">
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.ul)}>
-        <li className={css(styles.li)}>
-          <a onClick={this.props.} className={css(styles.liA)}>general</a>
-        </li>
-        <li className={css(styles.li)}>
-          <a onClick= className={css(styles.liA)}>random</a>
-        </li>
+        Object.keys(this.state.rooms).map(
+          <RoomLink />
+        )
       </ul>
     </nav>
   );
