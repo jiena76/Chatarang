@@ -7,10 +7,10 @@ const RoomList = () => {
       <h2 className={css(styles.h2)}>Rooms</h2>
       <ul className={css(styles.ul)}>
         <li className={css(styles.li)}>
-          <a href="#" className={css(styles.liA)}>general</a>
+          <a onClick={this.props.} className={css(styles.liA)}>general</a>
         </li>
         <li className={css(styles.li)}>
-          <a href="#" className={css(styles.liA)}>random</a>
+          <a onClick= className={css(styles.liA)}>random</a>
         </li>
       </ul>
     </nav>
