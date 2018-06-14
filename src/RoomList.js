@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
 import RoomLink from './RoomLink'
-import RoomForm from './RoomForm'
+// import RoomForm from './RoomForm'
 import base from './base'
 
 class RoomList extends Component {
@@ -21,7 +21,7 @@ class RoomList extends Component {
         description: "Goodies",
       },
     },
-    //showRoomForm: false,
+    showRoomForm: false,
   }
 
   componentDidMount() {
@@ -34,7 +34,7 @@ class RoomList extends Component {
     )
   }
 
-  /*
+  
   showRoomForm = () => {
     this.setState({ showRoomForm: true })
   }
@@ -48,7 +48,7 @@ class RoomList extends Component {
     rooms[room.name] = room
     this.setState({ rooms })
   }
-  */
+  
   render() {
     /*
     if (this.state.showRoomForm) {
@@ -87,7 +87,7 @@ class RoomList extends Component {
         </nav>
       )
     }
-  //}
+  }
 }
 
 export default RoomList;
@@ -123,5 +123,24 @@ const styles = StyleSheet.create({
     ":hover": {
       backgroundColor: "rgba(255, 255, 255, 0.2)"
     }
-  }
+  },
+  heading: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  button: {
+    border: 0,
+    backgroundColor: 'transparent',
+    outline: 0,
+    padding: 0,
+    fontSize: '1rem',
+    color: 'rgba(255,255,255, 0.4)',
+    cursor: 'pointer',
+    transition: 'color 0.25s ease-out',
+
+    ':hover': {
+      color: 'white',
+    }
+  },
 })

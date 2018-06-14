@@ -20,8 +20,8 @@ class Main extends Component{
       <div className="Main" style={styles}>
       {/* {this.props.user} because Main is class not an object function */}
         <Sidebar
-          user={this.props.user} 
-          room={this.props.room} 
+          user={this.props.user}
+          signOut={this.props.signOut}
           setRoom={this.setRoom()}
         />
         <Chat 
