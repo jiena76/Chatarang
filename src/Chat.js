@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import base from './base'
 
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
@@ -14,10 +15,10 @@ class Chat extends Component{
     }
   }
 
-  componentDidMount(){
-    base.syncStarts('terry', {
+  componentWillMount() {
+    base.syncState('general/messages', {
       context: this,
-      state: "messages",
+      state: 'messages',
       asArray: true,
     })
   }
