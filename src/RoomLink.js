@@ -1,39 +1,23 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
-class RoomLink extends Component{
-  state = {
-    rooms: {
-      general: {
-        name: "general",
-        description: "Chat about anything!",
-      },
-      random: {
-        name: "random",
-        description: "Cat GIFs",
-      },
-      food: {
-        name: "food",
-        description: "Goodies",
-      },
-    }
+const RoomLink = (props) => {
+  const handleClick = (e) => {
+    e.preventDefault()
+    props.setRoom(props.room)
   }
 
-  handleClick = () => {
-
-  }
-
-  render(){
-    return(
-      <li className={`RoomLink ${css(styles.nav)}`}>
-        <a
-          herf="/"
-          className={css(styles.link)}
-          onClick={handleClick}
-        ></a>
-      </li>
-    );
-  }
+  return (
+    <li className={css(styles.item)}>
+      <a
+        href="/"
+        className={css(styles.link)}
+        onClick={handleClick}
+      >
+        { props.room.name }
+      </a>
+    </li>
+  )
 }
 
 export default RoomLink;

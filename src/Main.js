@@ -19,8 +19,15 @@ class Main extends Component{
     return(
       <div className="Main" style={styles}>
       {/* {this.props.user} because Main is class not an object function */}
-        <Sidebar user={this.props.user} room={this.props.room} setRoom={this.setRoom()}/>
-        <Chat user={this.props.user} room={this.state.room}/>
+        <Sidebar
+          user={this.props.user} 
+          room={this.props.room} 
+          setRoom={this.setRoom()}
+        />
+        <Chat 
+          user={this.props.user} 
+          room={this.state.room}
+        />
       </div>
     );
   }

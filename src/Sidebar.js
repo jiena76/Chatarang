@@ -15,7 +15,7 @@ const Sidebar = (props) => {
   )
 }
 
-{/* adding multiple styles
+{/* adding multiple styles format
   <h1 style={{
   ...styles.children,
   ...styles.h1
@@ -29,7 +29,6 @@ const styles = {
     padding: "1rem 0",
     display: "flex",
     flexDirection: "column",
-    padding: "0 1rem"
   },
   //.Sidebar h1
   h1: {
