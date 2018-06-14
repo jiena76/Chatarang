@@ -19,12 +19,12 @@ class Chat extends Component{
   componentWillMount() {
     this.syncMessages();
   }
-/*
+
   componentDidMount(prevProps) {
     if(prevProps.room.name !== this.props.room.name){
       this.syncMessages();
     }
-  }*/
+  }
 
   syncMessages = () => {
     // https://github.com/tylermcginnis/re-base#syncstateendpoint-options
@@ -62,10 +62,10 @@ class Chat extends Component{
     this.setState({messages});
   }
 
-  render(){
+  render(props){
     return(
       <div className="Chat" style={styles}>
-        <ChatHeader room={this.props.room} />
+        <ChatHeader room={this.state.room} />
         <MessageList messages={this.state.messages} room={this.props.room}/>
         <MessageForm addMessage={this.addMessage}/>
       </div>
