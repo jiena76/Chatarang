@@ -16,13 +16,14 @@ class Main extends Component{
   }
 
   render(){
+    console.log(this.state.room.name)
     return(
       <div className="Main" style={styles}>
       {/* {this.props.user} because Main is class not an object function */}
         <Sidebar
           user={this.props.user}
           signOut={this.props.signOut}
-          setRoom={this.setRoom()}
+          setRoom={this.setRoom}
         />
         <Chat 
           user={this.props.user} 

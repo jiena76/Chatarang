@@ -4,7 +4,7 @@ const Avatar = (props) => {
   return(
     <div 
       className="Avatar"
-      style={{...styles, background: `url(https://api.adorable.io/avatars/32/${props.user.email}.io.png)`}}>
+      style={{...styles, background: `url(https://api.adorable.io/avatars/40/${props.email}.io.png)`}}>
     </div>
   );
 }

@@ -17,12 +17,12 @@ class Chat extends Component{
   }
 
   componentWillMount() {
-    this.syncMessages();
+    this.syncMessages()
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps.room.name !== this.props.room.name){
-      this.syncMessages();
+    if (prevProps.room.name !== this.props.room.name) {
+      this.syncMessages()
     }
   }
 
@@ -65,6 +65,7 @@ class Chat extends Component{
   render(){
     return(
       <div className="Chat" style={styles}>
+        
         <ChatHeader room={this.props.room} />
         <MessageList messages={this.state.messages} room={this.props.room}/>
         <MessageForm addMessage={this.addMessage}/>

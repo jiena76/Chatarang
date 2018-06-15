@@ -11,7 +11,7 @@ const MessageList = (props) => {
       </div>
 
       {props.messages.map(mssg => (
-        <Message key={mssg.id} message={mssg} />
+        <Message key={mssg.id} message={mssg}/>
       ))}
     </div>
   )

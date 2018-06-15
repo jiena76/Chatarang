@@ -5,7 +5,7 @@ const SignOut = () => {
   return(
     <button 
       className={css(styles.button)}
-      onclick={SignOut}
+      onClick={SignOut}
     >
       <i className="fas fa-sign-out-alt"></i>
     </button>
