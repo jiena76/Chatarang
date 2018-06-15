@@ -10,12 +10,12 @@ const UserInfo = ({user}) => {
   return(
     <div className="UserInfo" style={styles.userInfo}>
       <div style={styles.avatar}>
-        <Avatar />
+        <Avatar user={user}/>
       </div>
       <div className="user" style={styles.user}>
         {user.userName}
       </div>
-      <a href="#" style={styles.a}>
+      <a href="/" style={styles.a}>
         <SignOut />
       </a>
     </div>

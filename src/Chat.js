@@ -62,7 +62,7 @@ class Chat extends Component{
     this.setState({messages});
   }
 
-  render(props){
+  render(){
     return(
       <div className="Chat" style={styles}>
         <ChatHeader room={this.props.room} />
