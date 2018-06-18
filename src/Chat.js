@@ -54,6 +54,7 @@ class Chat extends Component{
     messages.push({
       id: Date.now(),
       userName: this.props.user.userName,
+      email: this.props.user.email,
       body: body,
       // or just "body"
     })
