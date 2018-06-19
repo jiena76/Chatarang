@@ -8,9 +8,9 @@ const RoomLink = ({room, setRoom}) => {
   };
 
   return (
-    <li className={css(styles.item)}>
+    <li className={css(styles.li)}>
       {/* not "this.handleClick" because this component is not a class */}
-      <a href="/" className={css(styles.link)} onClick={handleClick}>
+      <a href="/" className={css(styles.liA)} onClick={handleClick}>
         {room.name}
       </a>
       {console.log(room.name)}
@@ -21,19 +21,22 @@ const RoomLink = ({room, setRoom}) => {
 export default RoomLink;
 
 const styles = StyleSheet.create({
-  item: {
-    marginBottom: '0.5rem',
+  //.RoomList li
+  li: {
+    marginBottom: "0.5rem"
   },
-  link: {
+  //.RoomList li a
+  liA: {
     display: "block",
     color: "whitesmoke",
     textDecoration: "none",
 
-    "::before": {
-      content: '"# "',
+    ":before": {
+      content: "'# '"
     },
+
     ":hover": {
-      backgroundColor: "rgba(225, 225, 225, 0.2",
-    },
-  }
+      backgroundColor: "rgba(255, 255, 255, 0.2)"
+    }
+  },
 });

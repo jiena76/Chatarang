@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
 import RoomLink from './RoomLink'
-import RoomForm from './RoomForm'
+// import RoomForm from './RoomForm'
 import base from './base'
 
 class RoomList extends Component {
@@ -11,19 +11,22 @@ class RoomList extends Component {
       general: {
         name: "general",
         description: "Chat about anything!",
+        messages: [],
       },
       random: {
         name: "random",
         description: "Cat GIFs",
+        messages: [],
       },
       food: {
         name: "food",
         description: "Goodies",
+        messages: [],
       },
-    },
-    showRoomForm: false,
+    }
   }
-
+  
+  /*
   componentDidMount() {
     base.syncState(
       'rooms',
@@ -34,7 +37,6 @@ class RoomList extends Component {
     )
   }
 
-  
   showRoomForm = () => {
     this.setState({ showRoomForm: true })
   }
@@ -48,44 +50,34 @@ class RoomList extends Component {
     rooms[room.name] = room
     this.setState({ rooms })
   }
+  */
   
   render() {
-    /*if (this.state.showRoomForm) {
-      return (
-        <RoomForm
-          hideRoomForm={this.hideRoomForm}
-          addRoom={this.addRoom}
-        />
-      )
-    } */
-    
-   // else {  
-      return (
-        <nav className={`RoomList ${css(styles.nav)}`}>
-        
-          <div className={css(styles.heading)}>
-            <h2 className={css(styles.h2)}>Rooms</h2>
-            <button className={css(styles.button)} onClick={this.showRoomForm}>
-              <i className="fas fa-plus-circle" title="Add room"></i>
-            </button>
-          </div>
+    return (
+      <nav className={`RoomList ${css(styles.nav)}`}>
 
-          <ul className={css(styles.list)}>
-            {/* "Object.keys" for iterating (mapping) through an object */
-              Object.keys(this.state.rooms).map(roomName => (
-                <RoomLink
-                  /* "key" added since iterating, and iterating needs an identification */
-                  key={roomName}
-                  /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
-                  room={this.state.rooms[roomName]}
-                  setRoom={this.props.setRoom}
-                />
-              ))
-            }            
-          </ul>
-        </nav>
-      )
-   // }
+        <div className={css(styles.heading)}>
+          <h2 className={css(styles.h2)}>Rooms</h2>
+          <button className={css(styles.button)} onClick={this.showRoomForm}>
+            <i className="fas fa-plus-circle" title="Add room"></i>
+          </button>
+        </div>
+
+        <ul className={css(styles.ul)}>
+          {/* "Object.keys" for iterating (mapping) through an object */
+            Object.keys(this.state.rooms).map(roomName => (
+              <RoomLink
+                /* "key" added since iterating, and iterating needs an identification */
+                key={roomName}
+                /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
+                room={this.state.rooms[roomName]}
+                setRoom={this.props.setRoom}
+              />
+            ))
+          }
+        </ul>
+      </nav>
+    )
   }
 }
 
@@ -104,24 +96,7 @@ const styles = StyleSheet.create({
     listStyle: "none",
     marginLeft: "0",
     paddingLeft: "0"
-  },
-  //.RoomList li
-  li: {
-    marginBottom: "0.5rem"
-  },
-  //.RoomList li a
-  liA: {
-    display: "block",
-    color: "whitesmoke",
-    textDecoration: "none",
-
-    ":before": {
-      content: "'# '"
-    },
-
-    ":hover": {
-      backgroundColor: "rgba(255, 255, 255, 0.2)"
-    }
+    
   },
   heading: {
     display: 'flex',
