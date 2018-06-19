@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
-const RoomLink = (props) => {
+const RoomLink = ({room}) => {
   const handleClick = (e) => {
     e.preventDefault()
-    props.setRoom(props.room)
+    //props.setRoom(room)
   }
 
   return (
@@ -14,7 +14,7 @@ const RoomLink = (props) => {
         className={css(styles.link)}
         onClick={handleClick}
       >
-        { props.room.name }
+        { room.name }
       </a>
     </li>
   )
@@ -22,4 +22,20 @@ const RoomLink = (props) => {
 
 export default RoomLink;
 
-const styles = StyleSheet.create
+const styles = StyleSheet.create({
+  item: {
+    marginBottom: '0.5rem',
+  },
+  link: {
+    display: "block",
+    color: "whitesmoke",
+    textDecoration: "none",
+
+    "::before": {
+      content: '"# "',
+    },
+    ":hover": {
+      backgroundColor: "rgba(225, 225, 225, 0.2",
+    },
+  }
+});

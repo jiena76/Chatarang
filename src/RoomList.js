@@ -50,7 +50,6 @@ class RoomList extends Component {
   }
   
   render() {
-    
     if (this.state.showRoomForm) {
       return (
         <RoomForm
