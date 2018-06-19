@@ -9,14 +9,11 @@ const RoomLink = ({room, setRoom}) => {
 
   return (
     <li className={css(styles.item)}>
-      <a
-        href="/"
-        className={css(styles.link)}
-        onClick={handleClick}
-        // not "this.handleClick" because this component is not a class
-      >
-        { room.name }
+      {/* not "this.handleClick" because this component is not a class */}
+      <a href="/" className={css(styles.link)} onClick={handleClick}>
+        {room.name}
       </a>
+      {console.log(room.name)}
     </li>
   )
 }

@@ -81,7 +81,7 @@ class RoomList extends Component {
                   setRoom={this.props.setRoom}
                 />
               ))
-            }
+            }            
           </ul>
         </nav>
       )

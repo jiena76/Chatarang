@@ -5,7 +5,7 @@ const ChatHeader = ({room}) => {
     <div className="ChatHeader" style={styles.chatHeader}>
       <div className="roomInfo">
         <h2 style={styles.roomH2}>
-          #{room.name}
+          # {room.name}
         </h2>
         <p style={styles.roomP}>
           {room.description}

@@ -7,7 +7,7 @@ const MessageList = ({messages, room}) => {
     <div className="MessageList" style={styles.messageList}>
       <div className="roomAnnouncement" style={styles.roomAnnounce}>
         <h3 style={styles.roomH3}>
-          #{room.name}
+          # {room.name}
         </h3>
         <p>This is the very beginning of the #{room.name} room.</p>
       </div>
