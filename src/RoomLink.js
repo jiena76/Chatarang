@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
-const RoomLink = ({room}) => {
+const RoomLink = ({room, setRoom}) => {
   const handleClick = (e) => {
-    e.preventDefault()
-    //props.setRoom(room)
-  }
+    e.preventDefault();  // prevent refreshing
+    setRoom(room);
+  };
 
   return (
     <li className={css(styles.item)}>
@@ -13,6 +13,7 @@ const RoomLink = ({room}) => {
         href="/"
         className={css(styles.link)}
         onClick={handleClick}
+        // not "this.handleClick" because this component is not a class
       >
         { room.name }
       </a>

@@ -29,7 +29,8 @@ const styles = {
   userInfo: {
     marginBottom: "1rem",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    padding: "0 1rem",
   },
   //.UserInfo .Avatar
   avatar: {

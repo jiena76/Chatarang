@@ -50,34 +50,33 @@ class RoomList extends Component {
   }
   
   render() {
-    if (this.state.showRoomForm) {
+    /*if (this.state.showRoomForm) {
       return (
         <RoomForm
           hideRoomForm={this.hideRoomForm}
           addRoom={this.addRoom}
         />
       )
-    } else {
-      
+    } */
+    
+   // else {  
       return (
-        <nav
-          className={`RoomList ${css(styles.nav)}`}
-        >
+        <nav className={`RoomList ${css(styles.nav)}`}>
+        
           <div className={css(styles.heading)}>
             <h2 className={css(styles.h2)}>Rooms</h2>
-            <button
-              className={css(styles.button)}
-              onClick={this.showRoomForm}
-            >
+            <button className={css(styles.button)} onClick={this.showRoomForm}>
               <i className="fas fa-plus-circle" title="Add room"></i>
             </button>
           </div>
+
           <ul className={css(styles.list)}>
             {/* "Object.keys" for iterating (mapping) through an object */
               Object.keys(this.state.rooms).map(roomName => (
                 <RoomLink
                   /* "key" added since iterating, and iterating needs an identification */
                   key={roomName}
+                  /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
                   room={this.state.rooms[roomName]}
                   setRoom={this.props.setRoom}
                 />
@@ -86,7 +85,7 @@ class RoomList extends Component {
           </ul>
         </nav>
       )
-    }
+   // }
   }
 }
 
