@@ -73,12 +73,13 @@ class RoomList extends Component {
             </button>
           </div>
           <ul className={css(styles.list)}>
-            {
+            {/* "Object.keys" for iterating (mapping) through an object */
               Object.keys(this.state.rooms).map(roomName => (
                 <RoomLink
+                  /* "key" added since iterating, and iterating needs an identification */
                   key={roomName}
                   room={this.state.rooms[roomName]}
-                  loadRoom={this.props.loadRoom}
+                  setRoom={this.props.setRoom}
                 />
               ))
             }
