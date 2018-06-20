@@ -6,6 +6,7 @@ import UserInfo from './UserInfo'
 const Sidebar = ({user, signOut, setRoom}) => {
   return(
     <aside className="Sidebar" style={styles.sidebar}>
+    {/* adding multiple styles format: <h1 style={{ ...styles.children,  ...styles.h1  }}> */}
       <UserInfo user={user} signOut={signOut} />
       <h1 style={styles.h1}>
         XTBC 18
@@ -14,12 +15,6 @@ const Sidebar = ({user, signOut, setRoom}) => {
     </aside>
   )
 }
-
-{/* adding multiple styles format
-  <h1 style={{
-  ...styles.children,
-  ...styles.h1
-  }}> */}
 
 const styles = {
   sidebar: {

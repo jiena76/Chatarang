@@ -15,7 +15,29 @@ class Chat extends Component{
       rebaseBinding: null,
     }
   }
-
+  
+  // only runs once when the page is loaded, therefore componentDidUpdate required
+  componentDidMount(){
+    base.syncState("general/messages", {
+      context: this,
+      state: 'messages',
+      asArray: true,
+    })
+  }
+  
+  addMessage = (body) => {
+    const messages = [...this.state.messages];
+    messages.push({
+      id: Date.now(),
+      userName: this.props.user.userName,
+      email: this.props.user.email,
+      body: body,
+    })
+    // {messages: messages} not required because variable name == tag name
+    this.setState({messages});
+  }
+  
+  /*
   componentWillMount() {
     this.syncMessages()
   }
@@ -62,6 +84,8 @@ class Chat extends Component{
     // {messages: messages} not required because variable name == tag name
     this.setState({messages});
   }
+
+  */
 
   render(){
     return(

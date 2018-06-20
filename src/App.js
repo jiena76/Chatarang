@@ -14,13 +14,22 @@ class App extends Component {
   }
 
   handleAuth = (user) => {
-    this.setState({user})
+    this.setState({
+      user: {
+
+      }
+    })
 
     // this.setState.user = {
     //   ID: '1234',
     //   userName: 'chris',
     //   email: 'chris97@gmail.com',
     // }
+  }
+
+  signOut = () => {
+    // set user as an empty object
+    this.setState({user: {} });
   }
 
   render() {

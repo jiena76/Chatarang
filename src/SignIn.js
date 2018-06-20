@@ -40,6 +40,7 @@ class SignIn extends Component{
             <input
               type="email"
               name="email"
+              placeholder="Email"
               className={css(styles.input)}
               onChange={this.handleChange}
               autoFocus

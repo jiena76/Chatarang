@@ -35,7 +35,6 @@ const styles = {
   //.UserInfo .Avatar
   avatar: {
     marginRight: "0.5rem",
-    marginTop: "0.5rem"
   },
   //.UserInfo .user
   user: {
