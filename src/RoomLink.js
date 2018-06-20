@@ -13,7 +13,6 @@ const RoomLink = ({room, setRoom}) => {
       <a href="/" className={css(styles.liA)} onClick={handleClick}>
         {room.name}
       </a>
-      {console.log(room.name)}
     </li>
   )
 }
