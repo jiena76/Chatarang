@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
 import RoomLink from './RoomLink'
-import NewRoomForm from './NewRoomForm'
+import RoomForm from './RoomForm'
 import base from './base'
 
 class RoomList extends Component {
@@ -44,7 +44,7 @@ class RoomList extends Component {
           </button>
         </div>
 
-        <NewRoomForm addRoom={this.addRoom} visibility={this.state.showRoomForm} hide={this.hideRoomForm} />
+        <RoomForm addRoom={this.addRoom} visibility={this.state.showRoomForm} hide={this.hideRoomForm} />
 
         <ul className={css(styles.ul)}>
           {/* "Object.keys" for iterating (mapping) through an object */
