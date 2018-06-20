@@ -13,17 +13,28 @@ class App extends Component {
     return this.state.user.uID;
   }
 
+  signOut = () => {
+    // set user as an empty object
+    this.setState({user: {} });
+    localStorage.removeItem("user");
+  }
+
+  componentDidMount() {
+    // "localStorage.getItem('user');" will return a string,
+    // so use JSON.parse to make it an object variable
+    const user = JSON.parse(localStorage.getItem('user'));
+    // if the variable "user" exists, then: 
+    if(user){
+      this.setState({user});
+    }
+  }
+
   handleAuth = (user) => {
     // same as typing: this.setState({user: user});
     this.setState({user});
     // storing in local to stay signed in when page is refreshed
     // uses stringify since localStorage only stores strings
     localStorage.setItem('user', JSON.stringify(user));
-  }
-
-  signOut = () => {
-    // set user as an empty object
-    this.setState({user: {} });
   }
 
   render() {
