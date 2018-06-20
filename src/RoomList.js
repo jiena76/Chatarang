@@ -7,48 +7,31 @@ import base from './base'
 
 class RoomList extends Component {
   state = {
-    rooms: {
-      general: {
-        name: "general",
-        description: "Chat about anything!",
-        messages: [],
-      },
-      random: {
-        name: "random",
-        description: "Cat GIFs",
-        messages: [],
-      },
-      food: {
-        name: "food",
-        description: "Goodies",
-        messages: [],
-      },
-    }
+    rooms: {}
   }
   
-  /*
   componentDidMount() {
-    base.syncState(
-      'rooms',
-      {
+    base.syncState('rooms', {
         context: this,
         state: 'rooms',
       }
-    )
+    );
   }
 
+  addRoom = (room) => {
+    const rooms = {...this.state.rooms};
+    // add the incoming room to the object "rooms"
+    rooms[room.name] = room;
+    this.setState({rooms});
+  }
+  
+  /*
   showRoomForm = () => {
     this.setState({ showRoomForm: true })
   }
 
   hideRoomForm = () => {
     this.setState({ showRoomForm: false })
-  }
-
-  addRoom = (room) => {
-    const rooms = {...this.state.rooms}
-    rooms[room.name] = room
-    this.setState({ rooms })
   }
   */
   
