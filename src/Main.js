@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
+// import base from './base'
 
 class Main extends Component{
   state = {
@@ -11,6 +12,24 @@ class Main extends Component{
   setRoom = (room) => {
     this.setState({room});
   }
+  
+  /*
+  componentDidMount(){
+    let theRoom = {};
+    base.fetch("rooms", {
+      then(data){
+        // theRoom = data[Object.keys(data)[0]];
+        theRoom = (data => data.json());
+        console.log(data.json());
+        // this.setState({room: theRoom});
+        // console.log(this.state.room);
+    }});
+    console.log("theRoom");
+    console.log(theRoom);
+    // console.log("setState room");
+    // console.log(this.state.room);
+  }
+  */
 
   render(){
     return(

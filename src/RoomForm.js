@@ -29,7 +29,7 @@ class RoomForm extends Component{
           <div className={css(styles.label)}>
             <h2 className={css(styles.h2)}>Rooms</h2>
             <button className={css(styles.button)} onClick={this.props.hide}>
-              <i class="fas fa-minus-circle" title="Hide room form"></i>
+              <i className="fas fa-minus-circle" title="Hide room form"></i>
             </button>
           </div>
   
@@ -47,7 +47,7 @@ class RoomForm extends Component{
             />
             <label htmlFor="description">Description</label>
             <input
-              name="dscription"
+              name="description"
               type="text"
               placeholder="description"
               onChange={this.handleChange}
