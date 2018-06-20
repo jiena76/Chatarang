@@ -16,6 +16,9 @@ class App extends Component {
   handleAuth = (user) => {
     // same as typing: this.setState({user: user});
     this.setState({user});
+    // storing in local to stay signed in when page is refreshed
+    // uses stringify since localStorage only stores strings
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   signOut = () => {
