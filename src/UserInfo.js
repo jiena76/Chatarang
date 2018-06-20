@@ -6,7 +6,7 @@ import SignOut from './SignOut'
 // same as this: const UserInfo = (props) => {
 // const {user, userName} = props is possible, destructing it.
 // {user, ...props} = user and (props - user)
-const UserInfo = ({user}) => {
+const UserInfo = ({user, signOut}) => {
   return(
     <div className="UserInfo" style={styles.userInfo}>
       <div style={styles.avatar}>
@@ -16,7 +16,7 @@ const UserInfo = ({user}) => {
         {user.userName}
       </div>
       <a href="/" style={styles.a}>
-        <SignOut />
+        <SignOut signOut={signOut} />
       </a>
     </div>
   );

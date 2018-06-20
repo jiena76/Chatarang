@@ -39,7 +39,7 @@ class App extends Component {
           /* if ther user is returned(exists),
           then open main, else open "sign in" page */
           this.signedIn()
-            ? <Main user={this.state.user}/>
+            ? <Main user={this.state.user} signOut={this.signOut}/>
             : <SignIn handleAuth={this.handleAuth}/>
         }
       </div>
