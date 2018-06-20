@@ -10,21 +10,12 @@ class App extends Component {
   }
 
   signedIn = () => {
-    return this.state.user.ID;
+    return this.state.user.uID;
   }
 
   handleAuth = (user) => {
-    this.setState({
-      user: {
-
-      }
-    })
-
-    // this.setState.user = {
-    //   ID: '1234',
-    //   userName: 'chris',
-    //   email: 'chris97@gmail.com',
-    // }
+    // same as typing: this.setState({user: user});
+    this.setState({user});
   }
 
   signOut = () => {

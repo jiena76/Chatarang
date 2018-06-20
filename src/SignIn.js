@@ -13,7 +13,7 @@ class SignIn extends Component{
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleAuth({
-      ID: '234243',
+      uID: this.state.email,
       userName: this.state.email,
       email: this.state.email,
     })
@@ -43,6 +43,7 @@ class SignIn extends Component{
               placeholder="Email"
               className={css(styles.input)}
               onChange={this.handleChange}
+              value={this.state.email}
               autoFocus
             />
             <button type="submit" className={css(styles.button)}>
