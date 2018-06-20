@@ -24,13 +24,15 @@ class RoomList extends Component {
     // add the incoming room to the object "rooms"
     rooms[room.name] = room;
     this.setState({rooms});
+    // when a new room is added, show that room
+    this.props.setRoom(room);
   }
   
   showRoomForm = () => {
-    this.setState({ showRoomForm: true })
+    this.setState({ showRoomForm: true });
   }
   hideRoomForm = () => {
-    this.setState({ showRoomForm: false })
+    this.setState({ showRoomForm: false });
   }
   
   render() {

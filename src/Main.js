@@ -5,10 +5,7 @@ import Chat from './Chat'
 
 class Main extends Component{
   state = {
-    room: {
-      name: "roomie",
-      description: "room 1",
-    }
+    room: {}
   }
 
   setRoom = (room) => {
