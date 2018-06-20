@@ -2,12 +2,13 @@ import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
 import RoomLink from './RoomLink'
-// import RoomForm from './RoomForm'
+import NewRoomForm from './NewRoomForm'
 import base from './base'
 
 class RoomList extends Component {
   state = {
-    rooms: {}
+    rooms: {},
+    showRoomForm: false,
   }
   
   componentDidMount() {
@@ -25,26 +26,25 @@ class RoomList extends Component {
     this.setState({rooms});
   }
   
-  /*
   showRoomForm = () => {
     this.setState({ showRoomForm: true })
   }
-
   hideRoomForm = () => {
     this.setState({ showRoomForm: false })
   }
-  */
   
   render() {
     return (
       <nav className={`RoomList ${css(styles.nav)}`}>
 
-        <div className={css(styles.heading)}>
+        <div className={css(styles.label)}>
           <h2 className={css(styles.h2)}>Rooms</h2>
           <button className={css(styles.button)} onClick={this.showRoomForm}>
             <i className="fas fa-plus-circle" title="Add room"></i>
           </button>
         </div>
+
+        <NewRoomForm addRoom={this.addRoom} visibility={this.state.showRoomForm} hide={this.hideRoomForm} />
 
         <ul className={css(styles.ul)}>
           {/* "Object.keys" for iterating (mapping) through an object */
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     paddingLeft: "0"
     
   },
-  heading: {
+  label: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
