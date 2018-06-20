@@ -19,6 +19,15 @@ class App extends Component {
     localStorage.removeItem("user");
   }
 
+  handleAuth = (user) => {
+    // same as typing: this.setState({user: user});
+    this.setState({user});
+    // storing in local to stay signed in when page is refreshed
+    // uses stringify since localStorage only stores strings
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+  
+  // runs once when the page loads
   componentDidMount() {
     // "localStorage.getItem('user');" will return a string,
     // so use JSON.parse to make it an object variable
@@ -27,14 +36,6 @@ class App extends Component {
     if(user){
       this.setState({user});
     }
-  }
-
-  handleAuth = (user) => {
-    // same as typing: this.setState({user: user});
-    this.setState({user});
-    // storing in local to stay signed in when page is refreshed
-    // uses stringify since localStorage only stores strings
-    localStorage.setItem('user', JSON.stringify(user));
   }
 
   render() {
