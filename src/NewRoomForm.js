@@ -46,6 +46,9 @@ class NewRoomForm extends Component{
         </form>
       );
     }
+    else{
+      return(null);
+    }
   }
 }
 
