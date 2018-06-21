@@ -4,7 +4,7 @@ const Metadata = (props) => {
   return(
     <div className="Metadata" style={styles.metadata}>
       <div className="user" style={styles.user}>
-        {props.message.userName}
+        {props.message.displayName}
       </div>
       {/* time not set yet, hardcoded */}
       <div className="time" style={styles.time}>

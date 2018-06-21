@@ -16,14 +16,16 @@ class SignIn extends Component{
     e.preventDefault()
     this.props.handleAuth({
       uid: this.state.email,
-      userName: this.state.email,
+      displayName: this.state.email,
       email: this.state.email,
     })
   }
 
   authenticate = () => {
     // Asynchronous, so use method "then" to wait until "response" is prepared, then call the function
-    auth.signInWithPopup(googleProvider).then(response => console.log(response));
+    auth.signInWithPopup(googleProvider).then(response => {
+      this.props.handleAuth(response.user);
+    });
   }
 
   render(){
@@ -62,8 +64,10 @@ class SignIn extends Component{
             <button
               type="button"
               onClick={this.authenticate}
+              className={css(styles.button)}
             >
-
+              <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
+              Sign in with Google
             </button>
           </form>
 
@@ -115,7 +119,6 @@ const styles = StyleSheet.create({
 
   form: {
     width: '40rem',
-    height: '15rem',
     backgroundColor: 'white',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
     marginBottom: '2rem',
@@ -150,12 +153,16 @@ const styles = StyleSheet.create({
   button: {
     display: 'block',
     margin: '0 auto',
-    padding: '1rem 2rem',
+    padding: '0.5rem 2rem',
     fontSize: '1.2rem',
     borderRadius: '1rem',
     backgroundColor: '#ff3333',
     color: 'white',
     width: '20rem',
+    outlineStyle: "solid",
+  },
+  brandIcon: {
+    marginRight: "1rem",
   },
 })
 

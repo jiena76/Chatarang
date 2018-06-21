@@ -19,7 +19,13 @@ class App extends Component {
     localStorage.removeItem("user");
   }
 
-  handleAuth = (user) => {
+  handleAuth = (oauthUser) => {
+    const user = {
+      uid: oauthUser.uid,
+      displayName: oauthUser.displayName,
+      email: oauthUser.email,
+      photoURL: oauthUser.photoURL,
+    };
     // same as typing: this.setState({user: user});
     this.setState({user});
     // storing in local to stay signed in when page is refreshed
