@@ -17,8 +17,9 @@ class Main extends Component{
     base.fetch("rooms", {}).then(data => {
       // const room = data[Object.keys(data)[0]];
       // this.setState({room});
-      this.setRoom(data[Object.keys(data)[0]]);
-      console.log(this.state.room)
+
+      // if data object isn't empty,
+      if(Object.keys(data).length !== 0) {this.setRoom(data[Object.keys(data)[0]])};
       // this.setState(data[Object.keys(data)[0]]) only saved the string "General"
       // but setRoom works for some reason
     });
