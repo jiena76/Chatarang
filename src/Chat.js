@@ -4,6 +4,7 @@ import base from './base' // importing re-base methods
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import MessageForm from './MessageForm'
+import RoomAnnouncement from './RoomAnnouncement'
 
 class Chat extends Component{
   constructor(){
@@ -70,8 +71,8 @@ class Chat extends Component{
     else{
       return(
         <div className="Chat" style={styles}>
-          <ChatHeader room={this.props.room} />
-          <MessageList messages={this.state.messages} room={this.props.room}/>
+          <ChatHeader room={{name: "N/A", description: ""}} />
+          <RoomAnnouncement roomName="No Room Available" exist={false}/>
         </div>
       );
     }
