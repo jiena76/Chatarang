@@ -3,14 +3,14 @@ import React from 'react'
 import Avatar from './Avatar'
 import Metadata from './Metadata'
 
-const Message = (props) => {
+const Message = ({user, message}) => {
   return(
     <div className="Message" style={styles.message}>
-      <Avatar email={props.message.email} />
+      <Avatar user={user} />
       <div className="details" style={styles.messageDetails}>
-        <Metadata message={props.message}/>        
+        <Metadata message={message}/>        
         <div className="body">
-          {props.message.body}    
+          {message.body}    
         </div>
       </div>
     </div>
