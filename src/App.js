@@ -35,6 +35,11 @@ class App extends Component {
     localStorage.setItem('user', JSON.stringify(user));
   }
   
+  handleUnauth = () => {
+    this.setState({user: {}});
+    localStorage.removeItem("user");
+  }
+
   // runs once when the page loads
   componentDidMount() {
     // "localStorage.getItem('user');" will return a string,
@@ -44,6 +49,20 @@ class App extends Component {
     if(user){
       this.setState({user});
     }
+
+    // whenever authentication information changes, call this function
+    auth.onAuthStateChanged(
+      user => {
+        // if there's an user
+        if(user){
+          this.handleAuth(user);
+        }
+        else{
+          // if signed out
+          this.handleUnauth(user);
+        }
+      }
+    )
   }
 
   render() {

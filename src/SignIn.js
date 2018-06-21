@@ -23,9 +23,7 @@ class SignIn extends Component{
 
   authenticate = () => {
     // Asynchronous, so use method "then" to wait until "response" is prepared, then call the function
-    auth.signInWithPopup(googleProvider).then(response => {
-      this.props.handleAuth(response.user);
-    });
+    auth.signInWithPopup(googleProvider);
   }
 
   render(){
@@ -43,7 +41,7 @@ class SignIn extends Component{
             onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
-            <label htmlFor="email" className={css(styles.label)}>
+            {/* <label htmlFor="email" className={css(styles.label)}>
               Email
             </label>
             <input
@@ -59,7 +57,7 @@ class SignIn extends Component{
               Sign In
             </button>
 
-            or
+            or */}
             
             <button
               type="button"
