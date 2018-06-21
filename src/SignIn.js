@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
+import {auth, googleProvider} from './base'
+
 class SignIn extends Component{
   state = {
     email: "",
@@ -13,10 +15,15 @@ class SignIn extends Component{
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleAuth({
-      uID: this.state.email,
+      uid: this.state.email,
       userName: this.state.email,
       email: this.state.email,
     })
+  }
+
+  authenticate = () => {
+    // Asynchronous, so use method "then" to wait until "response" is prepared, then call the function
+    auth.signInWithPopup(googleProvider).then(response => console.log(response));
   }
 
   render(){
@@ -48,6 +55,15 @@ class SignIn extends Component{
             />
             <button type="submit" className={css(styles.button)}>
               Sign In
+            </button>
+
+            or
+            
+            <button
+              type="button"
+              onClick={this.authenticate}
+            >
+
             </button>
           </form>
 

@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   signedIn = () => {
-    return this.state.user.uID;
+    return this.state.user.uid;
   }
 
   signOut = () => {
