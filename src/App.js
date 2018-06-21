@@ -3,6 +3,7 @@ import './App.css';
 
 import Main from './Main'
 import SignIn from './SignIn'
+import {auth} from './base'
 
 class App extends Component {
   state = {
@@ -14,6 +15,7 @@ class App extends Component {
   }
 
   signOut = () => {
+    auth.signOut();
     // set user as an empty object
     this.setState({user: {} });
     localStorage.removeItem("user");
