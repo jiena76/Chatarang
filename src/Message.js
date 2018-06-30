@@ -3,6 +3,7 @@ import React from 'react'
 import Avatar from './Avatar'
 import Metadata from './Metadata'
 
+// each message content
 const Message = ({user, message}) => {
   return(
     <div className="Message" style={styles.message}>

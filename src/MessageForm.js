@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+// form for submitting a new message
 class MessageForm extends Component{
   state = {
     body: ''

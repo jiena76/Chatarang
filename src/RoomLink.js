@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 import base from './base'
 
+// room list links for entering the room and others (del, edit, etc)
 const RoomLink = ({room, setRoom}) => {
   const handleClick = (e) => {
     e.preventDefault();  // prevent refreshing

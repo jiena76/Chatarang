@@ -5,6 +5,7 @@ import Main from './Main'
 import SignIn from './SignIn'
 import {auth} from './base'
 
+// application
 class App extends Component {
   state = {
     user: {}

@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import Chat from './Chat'
 import base from './base'
 
+// either main or signin page will show
 class Main extends Component{
   state = {
     room: {}

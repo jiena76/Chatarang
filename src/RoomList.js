@@ -5,6 +5,7 @@ import RoomLink from './RoomLink'
 import RoomForm from './RoomForm'
 import base from './base'
 
+// list of rooms in the sidebar
 class RoomList extends Component {
   state = {
     rooms: {},

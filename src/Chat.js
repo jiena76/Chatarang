@@ -6,6 +6,7 @@ import MessageList from './MessageList'
 import MessageForm from './MessageForm'
 import RoomAnnouncement from './RoomAnnouncement'
 
+// 1 of 2 main components, includes: ChatHeader, MessageForm, MessageList
 class Chat extends Component{
   constructor(){
     // getting constructor from the parent class

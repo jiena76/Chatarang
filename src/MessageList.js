@@ -3,6 +3,7 @@ import React from 'react'
 import Message from './Message'
 import RoomAnnouncement from './RoomAnnouncement'
 
+// list containing all the messages in that room
 const MessageList = ({messages, room}) => {
   return(
     <div className="MessageList" style={styles}>

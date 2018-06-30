@@ -1,5 +1,6 @@
 import React from 'react'
 
+// very top headline of the chat component
 const ChatHeader = ({room}) => {
   return(
     <div className="ChatHeader" style={styles.chatHeader}>

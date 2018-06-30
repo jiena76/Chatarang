@@ -1,5 +1,6 @@
 import React from 'react'
 
+// includes each message's creation information (uername and time)
 const Metadata = (props) => {
   return(
     <div className="Metadata" style={styles.metadata}>
