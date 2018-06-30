@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
 import Main from './Main'
@@ -69,12 +70,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Switch>
+          <Route path="/sign-in" component={SignIn}/>
+          <Route 
+            path="/rooms/:roomName"
+            // when rendering, history, location, and match doesn't get passed down.
+            // navProps => ( {...navProps} ) required for this reason
+            render={ navProps => (
+              <Main 
+                user={this.state.user} 
+                signOut={this.signOut}
+                {...navProps}
+              />)
+            }
+          />
+        </Switch>
         {
           /* if ther user is returned(exists),
-          then open main, else open "sign in" page */
+          then open main, else open "sign in" page 
           this.signedIn()
             ? <Main user={this.state.user} signOut={this.signOut}/>
-            : <SignIn handleAuth={this.handleAuth}/>
+            : <SignIn handleAuth={this.handleAuth}/>*/
+
         }
       </div>
     );
