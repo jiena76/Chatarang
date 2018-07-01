@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     height: '100vh',
     backgroundColor: '#f6f6f6',
   },
-
   header: {
     backgroundColor: '#fff',
     height: '4rem',
@@ -96,7 +95,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
   },
-
   title: {
     color: '#ff3344',
     fontWeight: 400,
@@ -104,7 +102,6 @@ const styles = StyleSheet.create({
     lineHeight: '80px',
     fontSize: '2rem',
   },
-
   main: {
     flex: 1,
     textAlign: 'center',
@@ -114,21 +111,18 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     paddingBottom: '3rem',
   },
-
   form: {
     width: '40rem',
     backgroundColor: 'white',
     boxShadow: '0 1px 1px rgba(0,0,0,.1)',
     marginBottom: '2rem',
-    paddingBottom: "2rem",
+    paddingBottom: '2rem',
   },
-
   label: {
     display: 'block',
     textTransform: 'uppercase',
     color: '#999',
   },
-
   input: {
     width: '20rem',
     fontSize: '1.5rem',
@@ -138,30 +132,27 @@ const styles = StyleSheet.create({
     marginBottom: '1rem',
     textAlign: 'center',
     padding: '0.5rem',
-
     ':focus': {
       outline: 0,
     },
   },
-
   h2: {
     fontWeight: 'normal',
   },
-
   button: {
     display: 'block',
-    margin: '0 auto',
-    padding: '0.5rem 2rem',
+    margin: '0 auto 1rem',
+    padding: '1rem 2rem',
     fontSize: '1.2rem',
     borderRadius: '1rem',
     backgroundColor: '#ff3333',
     color: 'white',
     width: '20rem',
-    outlineStyle: "solid",
+    cursor: 'pointer',
   },
   brandIcon: {
-    marginRight: "1rem",
-  },
+    marginRight: '1rem',
+  }
 })
 
 export default SignIn
