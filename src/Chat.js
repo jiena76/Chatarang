@@ -73,7 +73,7 @@ class Chat extends Component{
       return(
         <div className="Chat" style={styles}>
           <ChatHeader room={{name: "N/A", description: ""}} />
-          <RoomAnnouncement roomName="No Room Available" exist={false}/>
+          <RoomAnnouncement roomName="No Room Available (or not loaded yet)" exist={false}/>
         </div>
       );
     }
