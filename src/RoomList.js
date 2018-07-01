@@ -55,7 +55,6 @@ class RoomList extends Component {
                 key={roomName}
                 /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
                 room={this.state.rooms[roomName]}
-                setRoom={this.props.setRoom}
               />
             ))
           }

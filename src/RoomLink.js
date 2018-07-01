@@ -1,13 +1,10 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 import base from './base'
+import {NavLink} from 'react-router-dom';
 
 // room list links for entering the room and others (del, edit, etc)
-const RoomLink = ({room, setRoom}) => {
-  const handleClick = (e) => {
-    e.preventDefault();  // prevent refreshing
-    setRoom(room);
-  };
+const RoomLink = ({room}) => {
 
   const removeRoom = (e) => {
     e.preventDefault();
@@ -19,9 +16,9 @@ const RoomLink = ({room, setRoom}) => {
     <li className={css(styles.li)}>
       <div className={css(styles.liDiv)}>
         {/* not "this.handleClick" because this component is not a class */}
-        <a href="/" className={css(styles.liA)} onClick={handleClick}>
+        <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
           {room.name}
-        </a>
+        </NavLink>
         <button className={css(styles.button)} onClick={removeRoom}>
           <i className="fas fa-times"></i>
         </button>
