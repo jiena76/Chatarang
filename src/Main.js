@@ -16,6 +16,11 @@ class Main extends Component{
   
   componentDidMount(){
     base.fetch("rooms", {}).then(data => {
+      console.log(data["General"]);
+      this.setRoom(data[this.props.match.params.roomName]);
+    });    
+    /*
+    base.fetch("rooms", {}).then(data => {
       // const room = data[Object.keys(data)[0]];
       // this.setState({room});
 
@@ -24,6 +29,7 @@ class Main extends Component{
       // this.setState(data[Object.keys(data)[0]]) only saved the string "General"
       // but setRoom works for some reason
     });
+    */
   }
 
   render(){
