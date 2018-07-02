@@ -1,7 +1,0 @@
-li:hover > button{
-  color: rgba(255,255,255, 0.3);
-}
-
-li:hover > button:hover{
-  color: rgba(255,255,255, 0.7);
-}
