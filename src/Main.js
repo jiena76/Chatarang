@@ -16,7 +16,6 @@ class Main extends Component{
   
   componentDidMount(){
     base.fetch("rooms", {}).then(data => {
-      console.log(data["General"]);
       this.setRoom(data[this.props.match.params.roomName]);
     });    
     /*

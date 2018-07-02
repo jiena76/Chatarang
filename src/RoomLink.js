@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 import base from './base'
 import {NavLink} from 'react-router-dom';
+//import './RoomLink.css';
 
 // room list links for entering the room and others (del, edit, etc)
 const RoomLink = ({room}) => {
@@ -12,19 +13,32 @@ const RoomLink = ({room}) => {
     base.remove(`rooms/${room.name}`);
   }
 
-  return (
-    <li className={css(styles.li)}>
-      <div className={css(styles.liDiv)}>
-        {/* not "this.handleClick" because this component is not a class */}
-        <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
-          {room.name}
-        </NavLink>
-        <button className={css(styles.button)} onClick={removeRoom}>
-          <i className="fas fa-times"></i>
-        </button>
-      </div>
-    </li>
-  )
+  if(room.name === "General"){
+    return (
+      <li className={css(styles.li)}>
+        <div className={css(styles.liDiv)}>
+          <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+            {room.name}
+          </NavLink>
+        </div>
+      </li>
+    )
+  }
+  else{
+    return (
+      <li className={css(styles.li)}>
+        <div className={css(styles.liDiv)}>
+          {/* not "this.handleClick" because this component is not a class */}
+          <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+            {room.name}
+          </NavLink>
+          <button className={css(styles.button)} onClick={removeRoom}>
+            <i className="fas fa-times"></i>
+          </button>
+        </div>
+      </li>
+    )
+  }
 }
 
 export default RoomLink;
@@ -32,7 +46,14 @@ export default RoomLink;
 const styles = StyleSheet.create({
   //.RoomList li
   li: {
-    marginBottom: "0.5rem"
+    marginBottom: "0.5rem",
+    // button shows up while hovering li element
+    ":hover button": {
+      color: 'rgba(255,255,255, 0.3)',
+    },
+    ":hover button:hover": {
+      color: 'rgba(255,255,255, 0.7)',
+    }
   },
   liDiv: {
     display: 'flex',
@@ -64,9 +85,5 @@ const styles = StyleSheet.create({
     color: 'transparent',
     cursor: 'pointer',
     transition: 'color 0.25s ease-out',
-
-    ':hover': {
-      color: 'rgba(255,255,255, 0.7)',
-    }
   },
 });

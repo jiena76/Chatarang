@@ -8,3 +8,7 @@ body {
 .RoomList a.active {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+.RoomLink li:hover ~ button {
+  color: rgba(255,255,255, 0.7);
+}
