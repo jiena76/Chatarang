@@ -25,6 +25,7 @@ class Chat extends Component{
       displayName: this.props.user.displayName,
       email: this.props.user.email,
       body: body,
+      photoURL: this.props.user.photoURL,
     })
     // {messages: messages} not required because variable name == tag name
     this.setState({messages});

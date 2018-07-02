@@ -2,7 +2,6 @@ import React from 'react'
 import { StyleSheet, css } from 'aphrodite';
 import base from './base'
 import {NavLink} from 'react-router-dom';
-//import './RoomLink.css';
 
 // room list links for entering the room and others (del, edit, etc)
 const RoomLink = ({room}) => {

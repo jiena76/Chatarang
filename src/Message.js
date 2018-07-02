@@ -4,10 +4,10 @@ import Avatar from './Avatar'
 import Metadata from './Metadata'
 
 // each message content
-const Message = ({user, message}) => {
+const Message = ({message}) => {
   return(
     <div className="Message" style={styles.message}>
-      <Avatar user={user} />
+      <Avatar photoURL={message.photoURL} email={message.email} />
       <div className="details" style={styles.messageDetails}>
         <Metadata message={message}/>        
         <div className="body">
