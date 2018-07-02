@@ -12,6 +12,7 @@ class SignIn extends Component{
     this.setState({ email: e.target.value});
   }
 
+  /*
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleAuth({
@@ -20,6 +21,7 @@ class SignIn extends Component{
       email: this.state.email,
     })
   }
+  */
 
   authenticate = () => {
     // Asynchronous, so use method "then" to wait until "response" is prepared, then call the function
@@ -38,7 +40,7 @@ class SignIn extends Component{
         <main className={css(styles.main)}>
           <form
             className={css(styles.form)}
-            onSubmit={this.handleSubmit}
+            // onSubmit={this.handleSubmit}
           >
             <h1>Welcome!</h1>
             {/* <label htmlFor="email" className={css(styles.label)}>

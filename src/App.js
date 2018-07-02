@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 
 import Main from './Main'
@@ -71,19 +71,27 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/sign-in" component={SignIn}/>
-          <Route 
-            path="/rooms/:roomName"
-            // when rendering, history, location, and match doesn't get passed down.
-            // navProps => ( {...navProps} ) required for this reason
-            render={ navProps => (
-              <Main 
-                user={this.state.user} 
-                signOut={this.signOut}
-                {...navProps}
-              />)
-            }
-          />
+
+          <Route path="/sign-in" render={ navProps => (
+            this.signedIn()
+            ? <Redirect to="/rooms/general" />
+            : <SignIn {...navProps} />
+          )}/>
+
+          {/* when rendering, history, location, and match doesn't get passed down.
+          navProps => ( {...navProps} ) required for this reason */}
+          <Route path="/rooms/:roomName" render={ navProps => (
+            this.signedIn()
+              ? <Main user={this.state.user} signOut={this.signOut} {...navProps} />
+              : <Redirect to="/sign-in" />
+          )}/>
+
+          <Route render={ () => (
+            this.signedIn()
+            ? <Redirect to="/room/general" />
+            : <Redirect to="/sign-in" />
+          )}/>
+
         </Switch>
         {
           /* if ther user is returned(exists),
@@ -91,7 +99,6 @@ class App extends Component {
           this.signedIn()
             ? <Main user={this.state.user} signOut={this.signOut}/>
             : <SignIn handleAuth={this.handleAuth}/>*/
-
         }
       </div>
     );
