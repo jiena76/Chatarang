@@ -23,6 +23,12 @@ class RoomList extends Component {
     );
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps.roomName !== this.props.roomName){
+      this.props.setRoom(this.state.rooms[this.props.roomName]);
+    }
+  }
+
   addRoom = (room) => {
     const rooms = {...this.state.rooms};
     // add the incoming room to the object "rooms"
