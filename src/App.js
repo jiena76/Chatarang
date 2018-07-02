@@ -8,8 +8,14 @@ import {auth} from './base'
 
 // application
 class App extends Component {
-  state = {
-    user: {}
+  constructor(){
+    super();
+
+    const user = JSON.parse(localStorage.getItem('user')) || {};
+
+    this.state = {
+      user
+    }
   }
 
   signedIn = () => {
@@ -42,16 +48,20 @@ class App extends Component {
     localStorage.removeItem("user");
   }
 
-  // runs once when the page loads
-  componentDidMount() {
-    // "localStorage.getItem('user');" will return a string,
-    // so use JSON.parse to make it an object variable
-    const user = JSON.parse(localStorage.getItem('user'));
-    // if the variable "user" exists, then: 
+  // runs once when the page loads (after rendering)
+  // therefore signIn is false when checekd in render()
+  // componentWillMount is not recommended to use anymore
+  /*  (below was in componentDidMount)
+  // "localStorage.getItem('user');" will return a string,
+  // so use JSON.parse to make it an object variable
+  const user = JSON.parse(localStorage.getItem('user'));
+  // if the variable "user" exists, then: 
     if(user){
       this.setState({user});
     }
-
+    */
+   
+  componentDidMount() {
     // whenever authentication information changes, call this function
     auth.onAuthStateChanged(
       user => {
