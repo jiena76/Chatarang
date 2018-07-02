@@ -1,5 +1,5 @@
 import firebase from 'firebase/app'
-import database from 'firebase/database'
+import "firebase/database"
 import Rebase from 're-base'
 
 // Initialize Firebase
