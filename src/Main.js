@@ -14,11 +14,11 @@ class Main extends Component{
     this.setState({room});
   }
   
+  /*
   componentDidMount(){
     base.fetch("rooms", {}).then(data => {
       this.setRoom(data[this.props.match.params.roomName]);
-    });    
-    /*
+    });
     base.fetch("rooms", {}).then(data => {
       // const room = data[Object.keys(data)[0]];
       // this.setState({room});
@@ -28,8 +28,8 @@ class Main extends Component{
       // this.setState(data[Object.keys(data)[0]]) only saved the string "General"
       // but setRoom works for some reason
     });
-    */
   }
+  */
 
   render(){
     return(
@@ -37,6 +37,7 @@ class Main extends Component{
       {/* {this.props.user} because Main is class not an object function */}
         <Sidebar
           user={this.props.user}
+          roomName={this.props.match.params.roomName}
           signOut={this.props.signOut}
           setRoom={this.setRoom}  // this.setRoom because it's a class method
         />

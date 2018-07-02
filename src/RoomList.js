@@ -16,6 +16,9 @@ class RoomList extends Component {
     base.syncState('rooms', {
         context: this,
         state: 'rooms',
+        then(){
+          this.props.setRoom(this.state.rooms[this.props.roomName]);
+        }
       }
     );
   }
