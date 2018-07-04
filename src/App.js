@@ -60,19 +60,16 @@ class App extends Component {
       this.setState({user});
     }
     */
-   
+  
+  
   componentDidMount() {
     // whenever authentication information changes, call this function
     auth.onAuthStateChanged(
       user => {
         // if there's an user
-        if(user){
-          this.handleAuth(user);
-        }
-        else{
-          // if signed out
-          this.handleUnauth(user);
-        }
+        if (user) {this.handleAuth(user);}
+        // if signed out
+        else {this.handleUnauth(user);}
       }
     )
   }
@@ -80,9 +77,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {console.log(this.signedIn())}
         <Switch>
 
-          <Route path="/sign-in" render={ navProps => (
+          <Route exact path="/sign-in" render={ navProps => (
             this.signedIn()
             ? <Redirect to="/rooms/General" />
             : <SignIn {...navProps} />
@@ -90,7 +88,7 @@ class App extends Component {
 
           {/* when rendering, history, location, and match doesn't get passed down.
           navProps => ( {...navProps} ) required for this reason */}
-          <Route path="/rooms/:roomName" render={ navProps => (
+          <Route exact path="/rooms/:roomName" render={ navProps => (
             this.signedIn()
               ? <Main user={this.state.user} signOut={this.signOut} {...navProps} />
               : <Redirect to="/sign-in" />
@@ -101,8 +99,8 @@ class App extends Component {
             ? <Redirect to="/room/General" />
             : <Redirect to="/sign-in" />
           )}/>
-
         </Switch>
+        {console.log("loading")}
         {
           /* if ther user is returned(exists),
           then open main, else open "sign in" page 

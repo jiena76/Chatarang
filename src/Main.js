@@ -45,6 +45,7 @@ class Main extends Component{
           user={this.props.user} 
           room={this.state.room}
         />
+        {console.log(this.props.match.params.roomName)}
       </div>
     );
   }
