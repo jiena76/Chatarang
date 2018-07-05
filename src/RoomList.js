@@ -51,7 +51,6 @@ class RoomList extends Component {
         />
 
         <ul className={css(styles.ul)}>
-        {console.log(this.props.rooms)}
           {/* "Object.keys" for iterating (mapping) through an object */
             Object.keys(this.props.rooms).map(roomName => (
               <RoomLink
