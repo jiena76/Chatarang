@@ -78,25 +78,24 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-
-          <Route exact path="/sign-in" render={ navProps => (
+          <Route path="/sign-in" render={() => (
             this.signedIn()
-            ? <Redirect to="/rooms/General" />
-            : <SignIn {...navProps} />
+              ? <Redirect to="/rooms/General" />
+              : <SignIn />
           )}/>
 
           {/* when rendering, history, location, and match doesn't get passed down.
           navProps => ( {...navProps} ) required for this reason */}
-          <Route exact path="/rooms/:roomName" render={ navProps => (
+          <Route path="/rooms/:roomName" render={ navProps => (
             this.signedIn()
               ? <Main user={this.state.user} signOut={this.signOut} {...navProps} />
               : <Redirect to="/sign-in" />
           )}/>
 
-          <Route render={ () => (
+          <Route render={() => (
             this.signedIn()
-            ? <Redirect to="/room/General" />
-            : <Redirect to="/sign-in" />
+              ? <Redirect to="/room/General" />
+              : <Redirect to="/sign-in" />
           )}/>
         </Switch>
         {
