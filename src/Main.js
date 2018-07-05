@@ -28,7 +28,6 @@ class Main extends Component{
     this.setRoom(room);
   }
   
-  
   componentDidMount(){
     base.syncState("rooms", {
       context: this, 
