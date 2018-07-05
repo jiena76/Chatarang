@@ -44,10 +44,10 @@ class RoomList extends Component {
       <nav className={`RoomList ${css(styles.nav)}`}>
 
         <RoomForm
-          addRoom={this.addRoom} 
+          addRoom={this.props.addRoom} 
           visibility={this.state.showRoomForm} 
           show={this.showRoomForm}
-          hide={this.hideRoomForm} 
+          hide={this.hideRoomForm}
         />
 
         <ul className={css(styles.ul)}>

@@ -61,6 +61,7 @@ class Main extends Component{
           user={this.props.user}
           roomName={this.props.match.params.roomName}
           signOut={this.props.signOut}
+          addRoom={this.addRoom}
           setRoom={this.setRoom}  // this.setRoom because it's a class method
           rooms={this.state.rooms}
         />
