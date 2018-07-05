@@ -77,7 +77,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {console.log(this.signedIn())}
         <Switch>
 
           <Route exact path="/sign-in" render={ navProps => (
@@ -100,7 +99,6 @@ class App extends Component {
             : <Redirect to="/sign-in" />
           )}/>
         </Switch>
-        {console.log("loading")}
         {
           /* if ther user is returned(exists),
           then open main, else open "sign in" page 

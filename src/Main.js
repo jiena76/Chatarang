@@ -2,23 +2,40 @@ import React, { Component } from 'react'
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
-// import base from './base'
+import base from './base'
 
 // either main or signin page will show
 class Main extends Component{
-  state = {
-    room: {}
+  constructor(props){
+    super(props)
+
+    this.state = {
+      room: {},
+      rooms: {},
+    }
   }
 
   setRoom = (room) => {
     this.setState({room});
   }
   
-  /*
+  addRoom = (room) => {
+    const rooms = {...this.state.rooms};
+    // add the incoming room to the object "rooms"
+    rooms[room.name] = room;
+    this.setState({rooms});
+    // when a new room is added, show that room
+    this.setRoom(room);
+  }
+  
+  
   componentDidMount(){
-    base.fetch("rooms", {}).then(data => {
-      this.setRoom(data[this.props.match.params.roomName]);
+    base.syncState("rooms", {
+      context: this, 
+      state: "rooms", 
+      then: () => {this.setRoom(this.props.match.params.roomName)},
     });
+    /*
     base.fetch("rooms", {}).then(data => {
       // const room = data[Object.keys(data)[0]];
       // this.setState({room});
@@ -28,8 +45,14 @@ class Main extends Component{
       // this.setState(data[Object.keys(data)[0]]) only saved the string "General"
       // but setRoom works for some reason
     });
+    */
   }
-  */
+
+  componentDidUpdate(prevProps){
+    if(prevProps.match.params.roomName !== this.props.match.params.roomName){
+      this.setRoom(this.state.rooms[this.props.match.params.roomName]);
+    }
+  }
 
   render(){
     return(
@@ -40,12 +63,12 @@ class Main extends Component{
           roomName={this.props.match.params.roomName}
           signOut={this.props.signOut}
           setRoom={this.setRoom}  // this.setRoom because it's a class method
+          rooms={this.state.rooms}
         />
         <Chat 
           user={this.props.user} 
           room={this.state.room}
         />
-        {console.log(this.props.match.params.roomName)}
       </div>
     );
   }
