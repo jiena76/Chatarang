@@ -12,6 +12,11 @@ const RoomLink = ({room}) => {
     base.remove(`rooms/${room.name}`);
   }
 
+  const editRoomName = (e) => {
+    e.preventDefault();
+    console.log(room);
+  }
+
   if(room.name === "General"){
     return (
       <li className={css(styles.li)}>
@@ -31,9 +36,14 @@ const RoomLink = ({room}) => {
           <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
             {room.name}
           </NavLink>
-          <button className={css(styles.button)} onClick={removeRoom}>
-            <i className="fas fa-times"></i>
-          </button>
+          <div>
+            <button className={css(styles.button, styles.smaller)} onClick={editRoomName}>
+              <i className="fas fa-pencil-alt"></i>
+            </button>
+            <button className={css(styles.button, styles.bigger)} onClick={removeRoom}>
+              <i className="fas fa-times"></i>
+            </button>
+          </div>
         </div>
       </li>
     )
@@ -80,9 +90,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     outline: 0,
     padding: 0,
+    marginLeft: "0.4em",
     fontSize: '1rem',
     color: 'transparent',
     cursor: 'pointer',
     transition: 'color 0.25s ease-out',
   },
+  bigger: {
+    fontSize: "1.1em",
+  },
+  smaller: {
+    fontSize: "0.9em",
+  }
 });
