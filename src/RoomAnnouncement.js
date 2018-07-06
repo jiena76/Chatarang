@@ -1,7 +1,7 @@
 import React from 'react'
 
 // header inside message list indicating the very beginning of the message list
-const RoomAnnouncement = ({roomName, exist}) => {
+const RoomAnnouncement = ({roomName}) => {
   return(
     <div className="RoomAnnouncement" style={styles.roomAnnounce}>
       <h3 style={styles.h3}>

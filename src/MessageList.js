@@ -7,7 +7,7 @@ import RoomAnnouncement from './RoomAnnouncement'
 const MessageList = ({messages, room}) => {
   return(
     <div className="MessageList" style={styles}>
-      <RoomAnnouncement roomName={room.name} exist={true}/>
+      <RoomAnnouncement roomName={room.name}/>
 
       {messages.map(mssg => (
         <Message key={mssg.id} message={mssg}/>
