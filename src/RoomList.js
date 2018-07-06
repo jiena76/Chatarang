@@ -52,13 +52,12 @@ class RoomList extends Component {
 
         <ul className={css(styles.ul)}>
           {/* "Object.keys" for iterating (mapping) through an object */
-            Object.keys(this.props.rooms).map(roomName => (
+            Object.keys(this.props.rooms).map(roomID => (
               <RoomLink
                 /* "key" added since iterating, and iterating needs an identification */
-                key={roomName}
-                number={roomName.id}
+                key={roomID}
                 /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
-                room={this.props.rooms[roomName]}
+                room={this.props.rooms[roomID]}
               />
             ))
           }

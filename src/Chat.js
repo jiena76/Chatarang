@@ -52,7 +52,7 @@ class Chat extends Component{
     // ***sync with the new endpoint***
     // syncState method returns an object that can be pass to removeBinding
     // if to remove the listener while the component is still mounted
-    const rebaseBinding = base.syncState(`${this.props.room.name}/messages`, {
+    const rebaseBinding = base.syncState(`${this.props.room.id}/messages`, {
       context: this,
       state: 'messages',
       asArray: true,

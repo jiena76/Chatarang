@@ -13,7 +13,7 @@ const RoomLink = ({room}) => {
 
   const editRoomName = (e) => {
     e.preventDefault();
-    console.log(room);
+    // base.update(`rooms/${room.id}`, {name: "Hi"});
   }
 
   if(room.name === "General"){

@@ -3,7 +3,7 @@ import React from 'react'
 import RoomList from './RoomList';
 import UserInfo from './UserInfo'
 
-const Sidebar = ({user, roomName, rooms, signOut, addRoom, setRoom}) => {
+const Sidebar = ({user, roomName, signOut, addRoom, setRoom, rooms}) => {
   return(
     <aside className="Sidebar" style={styles.sidebar}>
     {/* adding multiple styles format: <h1 style={{ ...styles.children,  ...styles.h1  }}> */}
@@ -11,7 +11,12 @@ const Sidebar = ({user, roomName, rooms, signOut, addRoom, setRoom}) => {
       <h1 style={styles.h1}>
         XTBC 18
       </h1>
-      <RoomList addRoom={addRoom} setRoom={setRoom} roomName={roomName} rooms={rooms}/>
+      <RoomList 
+        addRoom={addRoom} 
+        setRoom={setRoom} 
+        roomName={roomName} 
+        rooms={rooms}
+      />
     </aside>
   )
 }

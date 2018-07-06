@@ -12,6 +12,7 @@ class Main extends Component{
     this.state = {
       room: {},
       rooms: {},
+      idList: {},
     }
   }
 
@@ -24,15 +25,27 @@ class Main extends Component{
     // add the incoming room to the object "rooms"
     rooms[room.id] = room;
     this.setState({rooms});
+
+    // add id config in idList
+    const idList = {...this.state.idList};
+    idList[room.name] = room.id;
+    this.setState({idList});
+
     // when a new room is added, show that room
     this.setRoom(room);
   }
   
   componentDidMount(){
+    // sync idList
+    base.syncState("idList", {
+      context: this,
+      state: "idList",
+    });
+    // sync rooms
     base.syncState("rooms", {
       context: this, 
       state: "rooms", 
-      then: () => {this.setRoom(this.state.rooms[this.props.match.params.roomName])},
+      then: () => {this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]])},
     });
     /*
     base.fetch("rooms", {}).then(data => {
@@ -49,7 +62,7 @@ class Main extends Component{
 
   componentDidUpdate(prevProps){
     if(prevProps.match.params.roomName !== this.props.match.params.roomName){
-      this.setRoom(this.state.rooms[this.props.match.params.roomName]);
+      this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]]);
     }
   }
 
