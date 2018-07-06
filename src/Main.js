@@ -22,7 +22,7 @@ class Main extends Component{
   addRoom = (room) => {
     const rooms = {...this.state.rooms};
     // add the incoming room to the object "rooms"
-    rooms[room.name] = room;
+    rooms[room.id] = room;
     this.setState({rooms});
     // when a new room is added, show that room
     this.setRoom(room);

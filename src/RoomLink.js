@@ -8,8 +8,7 @@ const RoomLink = ({room}) => {
 
   const removeRoom = (e) => {
     e.preventDefault();
-    base.remove(room.name);
-    base.remove(`rooms/${room.name}`);
+    base.remove(`rooms/${room.id}`);
   }
 
   const editRoomName = (e) => {

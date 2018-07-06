@@ -5,8 +5,8 @@ import { StyleSheet, css } from 'aphrodite';
 class RoomForm extends Component{
   state = {
     room: {
-      name: '',
-      description: '',
+      name: "",
+      description: "",
     },
   }
 
@@ -18,7 +18,7 @@ class RoomForm extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addRoom(this.state.room);
+    this.props.addRoom({...this.state.room, id: Date.now()});
     this.props.hide();
     this.setState({name: "", description: ""});
   }

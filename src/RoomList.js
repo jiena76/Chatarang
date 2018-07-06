@@ -56,6 +56,7 @@ class RoomList extends Component {
               <RoomLink
                 /* "key" added since iterating, and iterating needs an identification */
                 key={roomName}
+                number={roomName.id}
                 /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
                 room={this.props.rooms[roomName]}
               />
