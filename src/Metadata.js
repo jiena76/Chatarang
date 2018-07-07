@@ -1,15 +1,16 @@
 import React from 'react'
+import Moment from 'moment'
 
 // includes each message's creation information (uername and time)
-const Metadata = (props) => {
+const Metadata = ({message}) => {
   return(
     <div className="Metadata" style={styles.metadata}>
       <div className="user" style={styles.user}>
-        {props.message.displayName}
+        {message.displayName}
       </div>
       {/* time not set yet, hardcoded */}
       <div className="time" style={styles.time}>
-        1:12 PM
+        {Moment(message.createdAt).format("h:mm a")}
       </div>
     </div>
   );
