@@ -30,6 +30,8 @@ class RoomLink extends Component{
     base.remove(`idList/${this.props.room.name}`);
     base.remove(`${this.props.room.id}`);
 
+    // when the room is removed while user's on the page,
+    // direct to /rooms/General
     if(this.props.roomName === this.props.room.name)
       this.props.history.push("/rooms/General");
   }
