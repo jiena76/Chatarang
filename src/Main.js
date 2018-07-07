@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 import base from './base'
-import { BADFLAGS } from 'dns';
 
 // either main or signin page will show
 class Main extends Component{
