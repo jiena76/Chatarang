@@ -49,9 +49,12 @@ class Main extends Component{
     
     // update idList
     const idList = {...this.state.idList};
-    delete idList.oldName;
     idList[newName] = id;
     this.setState({idList});
+    base.remove(`/idList/${oldName}`).then(() => {
+      if(this.props.match.params.roomName === oldName)
+        this.props.history.push(`/rooms/${newName}`);
+    });
   }
   
   componentDidMount(){

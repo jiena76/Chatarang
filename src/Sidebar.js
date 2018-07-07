@@ -17,10 +17,12 @@ const Sidebar = ({user, roomName, signOut, addRoom, setRoom, editRoomName, rooms
         editRoomName={editRoomName}
         roomName={roomName} 
         rooms={rooms}
-      />
+        />
     </aside>
   )
 }
+
+export default Sidebar;
 
 const styles = {
   sidebar: {
@@ -39,5 +41,3 @@ const styles = {
     padding: "0 1rem",
   }
 }
-
-export default Sidebar;

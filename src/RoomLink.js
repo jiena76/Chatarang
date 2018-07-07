@@ -1,50 +1,96 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite';
 import base from './base'
 import {NavLink} from 'react-router-dom';
 
+import EditRoomForm from './EditRoomForm';
+
 // room list links for entering the room and others (del, edit, etc)
-const RoomLink = ({room, editRoomName}) => {
-
-  const removeRoom = (e) => {
-    base.remove(`rooms/${room.id}`);
+class RoomLink extends Component{
+  state = {
+    visibility: false,
   }
 
-  if(room.name === "General"){
-    return (
-      <li className={css(styles.li)}>
-        <div className={css(styles.liDiv)}>
-          <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
-            {room.name}
-          </NavLink>
-          <div>
-            <button className={css(styles.button, styles.smaller)} onClick={editRoomName}>
-              <i className="fas fa-pencil-alt"></i>
-            </button>
-          </div>
-        </div>
-      </li>
-    )
+  formVisibility = () => {
+    if(this.state.visibility === false)
+      this.setState({ visibility: true });
+    else
+      this.setState({ visibility: false });
   }
-  else{
-    return (
-      <li className={css(styles.li)}>
-        <div className={css(styles.liDiv)}>
-          {/* not "this.handleClick" because this component is not a class */}
-          <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
-            {room.name}
-          </NavLink>
-          <div>
-            <button className={css(styles.button, styles.smaller)} onClick={editRoomName}>
-              <i className="fas fa-pencil-alt"></i>
-            </button>
-            <button className={css(styles.button, styles.bigger)} onClick={removeRoom}>
-              <i className="fas fa-times"></i>
-            </button>
+
+  showEditForm = () => {
+    this.setState({ visibility: true });
+  }
+  hideEditForm = () => {
+    this.setState({ visibility: false });
+  }
+
+  removeRoom = () => {
+    base.remove(`rooms/${this.props.room.id}`);
+    base.remove(`idList/${this.props.room.name}`);
+    base.remove(`${this.props.room.id}`);
+
+    // if(this.props.roomName === this.props.room.name)
+    //   this.props.history.push("/rooms/General");
+  }
+
+  render(){
+    const room = this.props.room;
+
+    if(room.name === "General"){
+      return (
+        <li className={css(styles.li)}>
+          <div className={css(styles.liDiv)}>
+            <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+              {room.name}
+            </NavLink>
+
+            <div className="buttons">
+              <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility}>
+                <i className="fas fa-pencil-alt"></i>
+              </button>
+            </div>
           </div>
-        </div>
-      </li>
-    )
+
+          <EditRoomForm 
+            roomName={room.name}
+            editRoomName={this.props.editRoomName}
+            visibility={this.state.visibility} 
+            show={this.showEditForm}
+            hide={this.hideEditForm}
+          />
+        </li>
+      );
+    }
+    else{
+      return (
+        <li className={css(styles.li)}>
+          <div className={css(styles.liDiv)}>
+            {/* not "this.handleClick" because this component is not a class */}
+            <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+              {room.name}
+            </NavLink>
+  
+            <div className="buttons">
+              <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility} >
+                <i className="fas fa-pencil-alt"></i>
+              </button>
+              <button className={css(styles.button, styles.bigger)} onClick={this.removeRoom}>
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+            <EditRoomForm 
+              roomName={room.name}
+              editRoomName={this.props.editRoomName}
+              visibility={this.state.visibility} 
+              show={this.showEditForm}
+              hide={this.hideEditForm}
+            />
+        </li>
+      );
+    }
   }
 }
 
@@ -54,6 +100,11 @@ const styles = StyleSheet.create({
   //.RoomList li
   li: {
     marginBottom: "0.5rem",
+  },
+  liDiv: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     // button shows up while hovering li element
     ":hover button": {
       color: 'rgba(255,255,255, 0.3)',
@@ -61,11 +112,6 @@ const styles = StyleSheet.create({
     ":hover button:hover": {
       color: 'rgba(255,255,255, 0.7)',
     }
-  },
-  liDiv: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   //.RoomList li a
   liA: {

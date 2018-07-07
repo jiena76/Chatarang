@@ -34,10 +34,7 @@ class RoomForm extends Component{
             </button>
           </div>
   
-          <form
-            className={css(styles.form)}
-            onSubmit={this.handleSubmit}
-          >
+          <form className={css(styles.form)} onSubmit={this.handleSubmit} >
             <label htmlFor="name">Room Name:</label>
             <input
               name="name"
@@ -94,6 +91,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
+    backgroundColor: 'rgba(255,255,255, 0.9)',
     borderRadius: "6px",
     outline: 0,
     marginBottom: "7px",
