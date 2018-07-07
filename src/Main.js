@@ -70,6 +70,7 @@ class Main extends Component{
       then: () => {
         if(this.state.idList[this.props.match.params.roomName])
           this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]]);
+        // handles when the requested room is not available
         else
           this.props.history.push(`/rooms/General`);
       },
