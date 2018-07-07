@@ -60,6 +60,7 @@ class RoomList extends Component {
                 room={this.props.rooms[roomID]}
                 roomName={this.props.roomName}
                 editRoomName={this.props.editRoomName}
+                history={this.props.history}
               />
             ))
           }

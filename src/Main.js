@@ -100,6 +100,7 @@ class Main extends Component{
           setRoom={this.setRoom}  // this.setRoom because it's a class method
           editRoomName={this.editRoomName}
           rooms={this.state.rooms}
+          history={this.props.history}
         />
         <Chat 
           user={this.props.user} 

@@ -30,8 +30,8 @@ class RoomLink extends Component{
     base.remove(`idList/${this.props.room.name}`);
     base.remove(`${this.props.room.id}`);
 
-    // if(this.props.roomName === this.props.room.name)
-    //   this.props.history.push("/rooms/General");
+    if(this.props.roomName === this.props.room.name)
+      this.props.history.push("/rooms/General");
   }
 
   render(){
