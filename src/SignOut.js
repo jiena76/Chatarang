@@ -4,7 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 const SignOut = ({signOut}) => {
   return(
     <button className={css(styles.button)} onClick={signOut}>
-      <i className="fas fa-sign-out-alt"></i>
+      <i className="fas fa-sign-out-alt" title="Sign out"></i>
     </button>
   );
 }
