@@ -43,13 +43,13 @@ class RoomLink extends Component{
       return (
         <li className={css(styles.li)}>
           <div className={css(styles.liDiv)}>
-            <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+            <NavLink title={room.name} to={`/rooms/${room.name}`} className={css(styles.liA)}>
               {room.name}
             </NavLink>
 
             <div className="buttons">
               <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility}>
-                <i className="fas fa-pencil-alt"></i>
+                <i className="fas fa-pencil-alt" title="Edit Room Name"></i>
               </button>
             </div>
           </div>
@@ -69,16 +69,16 @@ class RoomLink extends Component{
         <li className={css(styles.li)}>
           <div className={css(styles.liDiv)}>
             {/* not "this.handleClick" because this component is not a class */}
-            <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
+            <NavLink title={room.name} to={`/rooms/${room.name}`} className={css(styles.liA)}>
               {room.name}
             </NavLink>
   
             <div className="buttons">
               <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility} >
-                <i className="fas fa-pencil-alt"></i>
+                <i className="fas fa-pencil-alt" title="Edit Room Name"></i>
               </button>
               <button className={css(styles.button, styles.bigger)} onClick={this.removeRoom}>
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times" title="Delete Room"></i>
               </button>
             </div>
           </div>

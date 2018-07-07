@@ -35,8 +35,8 @@ class MessageForm extends Component{
           style={styles.input}
           autoFocus
         />
-        <button type='submit' style={styles.button}>
-            <i className="far fa-paper-plane" title="Send"></i>
+        <button title="Send" type='submit' style={styles.button}>
+            <i className="far fa-paper-plane"></i>
         </button>
       </form>
     );
@@ -80,8 +80,9 @@ const styles = {
     fontSize: "1.5rem",
     backgroundColor: "#1A8FE3",
     color: "white",
-    paddingLeft: "1rem",
-    paddingRight: "1rem",
+    cursor: 'pointer',
+    paddingLeft: "3rem",
+    paddingRight: "3rem",
     borderTopRightRadius: "0.5rem",
     borderBottomRightRadius: "0.5rem",
     border: "1px solid white"

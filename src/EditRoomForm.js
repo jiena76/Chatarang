@@ -36,7 +36,7 @@ class EditRoomForm extends Component{
               autoFocus
             />
             <button type="submit" onClick={this.handleSubmit} className={css(styles.button)}>
-              <i className="fas fa-check-square fa-lg"></i>
+              <i className="fas fa-check-square fa-lg" title="Rename Room"></i>
             </button>
           </form>
         </div>
