@@ -30,7 +30,7 @@ class EditRoomForm extends Component{
             <input 
               name="newName"
               type="text"
-              placeholder="New room name"
+              placeholder={this.props.roomName}
               onChange={this.handleChange}
               className={css(styles.input)}
               autoFocus
