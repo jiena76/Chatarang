@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import {withRouter} from 'react-router-dom';
 
 import Sidebar from './Sidebar'
 import Chat from './Chat'
@@ -32,7 +33,10 @@ class Main extends Component{
     this.setState({idList});
 
     // when a new room is added, show that room
-    this.setRoom(room);
+    // this.setRoom(room);
+
+    // make the room "active" when newly added and direct to that path
+    this.props.history.push(`/rooms/${room.name}`);
   }
   
   componentDidMount(){
