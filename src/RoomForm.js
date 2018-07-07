@@ -18,7 +18,7 @@ class RoomForm extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if(this.state.newName === ""){
+    if(this.state.room.name === ""){
       alert("Room name cannot be an empty string");
     }
     else{
