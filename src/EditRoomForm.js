@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite';
 
-// props: roomName, editRoomName, visibility, show, hide
+// props: roomName, editRoomName, visibility, formVisibility
 class EditRoomForm extends Component{
   state = {
     newName: ""
@@ -36,7 +36,10 @@ class EditRoomForm extends Component{
               autoFocus
             />
             <button type="submit" onClick={this.handleSubmit} className={css(styles.button)}>
-              <i className="fas fa-check-square fa-lg" title="Rename Room"></i>
+              <i className="far fa-check-circle fa-lg" title="Rename Room"></i>
+            </button>
+            <button type="button" onClick={this.props.formVisibility} className={css(styles.button)}s>
+              <i className="far fa-times-circle fa-lg" title="Cancel"></i>
             </button>
           </form>
         </div>
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     outline: 0,
     padding: 0,
-    marginLeft: "0.4em",
+    marginLeft: "0.3em",
     marginTop: "0.3em",
     fontSize: '1rem',
     color: 'rgba(255,255,255, 0.6)',

@@ -18,13 +18,6 @@ class RoomLink extends Component{
       this.setState({ visibility: false });
   }
 
-  showEditForm = () => {
-    this.setState({ visibility: true });
-  }
-  hideEditForm = () => {
-    this.setState({ visibility: false });
-  }
-
   removeRoom = () => {
     base.remove(`rooms/${this.props.room.id}`);
     base.remove(`idList/${this.props.room.name}`);
@@ -87,8 +80,7 @@ class RoomLink extends Component{
               roomName={room.name}
               editRoomName={this.props.editRoomName}
               visibility={this.state.visibility} 
-              show={this.showEditForm}
-              hide={this.hideEditForm}
+              formVisibility={this.formVisibility}
             />
         </li>
       );
