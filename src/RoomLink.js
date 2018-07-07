@@ -7,12 +7,10 @@ import {NavLink} from 'react-router-dom';
 const RoomLink = ({room}) => {
 
   const removeRoom = (e) => {
-    e.preventDefault();
     base.remove(`rooms/${room.id}`);
   }
 
   const editRoomName = (e) => {
-    e.preventDefault();
     // base.update(`rooms/${room.id}`, {name: "Hi"});
   }
 
@@ -23,6 +21,11 @@ const RoomLink = ({room}) => {
           <NavLink to={`/rooms/${room.name}`} className={css(styles.liA)}>
             {room.name}
           </NavLink>
+          <div>
+            <button className={css(styles.button, styles.smaller)} onClick={editRoomName}>
+              <i className="fas fa-pencil-alt"></i>
+            </button>
+          </div>
         </div>
       </li>
     )
