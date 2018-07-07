@@ -5,6 +5,8 @@ import Sidebar from './Sidebar'
 import Chat from './Chat'
 import base from './base'
 
+// NO PROTECTION AVAILABLE WHEN NO ROOM EXISTS IN THE DATABASE
+
 // either main or signin page will show
 class Main extends Component{
   constructor(props){
