@@ -36,7 +36,7 @@ class EditRoomForm extends Component{
               autoFocus
             />
             <button type="submit" onClick={this.handleSubmit} className={css(styles.button)}>
-              <i className="far fa-check-circle fa-lg" title="Rename Room"></i>
+              <i className="far fa-check-circle fa-lg" title="Rename"></i>
             </button>
             <button type="button" onClick={this.props.formVisibility} className={css(styles.button)}s>
               <i className="far fa-times-circle fa-lg" title="Cancel"></i>

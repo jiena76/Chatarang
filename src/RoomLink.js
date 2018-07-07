@@ -42,7 +42,7 @@ class RoomLink extends Component{
 
             <div className="buttons">
               <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility}>
-                <i className="fas fa-pencil-alt" title="Edit Room Name"></i>
+                <i className="fas fa-pencil-alt" title="Rename"></i>
               </button>
             </div>
           </div>
@@ -68,10 +68,10 @@ class RoomLink extends Component{
   
             <div className="buttons">
               <button className={css(styles.button, styles.smaller)} onClick={this.formVisibility} >
-                <i className="fas fa-pencil-alt" title="Edit Room Name"></i>
+                <i className="fas fa-pencil-alt" title="Rename"></i>
               </button>
               <button className={css(styles.button, styles.bigger)} onClick={this.removeRoom}>
-                <i className="fas fa-times" title="Delete Room"></i>
+                <i className="fas fa-times" title="Delete room"></i>
               </button>
             </div>
           </div>
