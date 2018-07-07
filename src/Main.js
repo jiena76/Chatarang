@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 import base from './base'
+import { BADFLAGS } from 'dns';
 
 // either main or signin page will show
 class Main extends Component{
@@ -39,8 +40,19 @@ class Main extends Component{
     this.props.history.push(`/rooms/${room.name}`);
   }
 
-  editRoomName = (room) => {
+  editRoomName = (oldName, newName) => {
+    const id = this.state.idList[oldName];
 
+    // update room Name
+    base.update(`rooms/${id}`, {
+      data: {name: newName}
+    });
+    
+    // update idList
+    const idList = {...this.state.idList};
+    delete idList.oldName;
+    idList[newName] = id;
+    this.setState({idList});
   }
   
   componentDidMount(){
