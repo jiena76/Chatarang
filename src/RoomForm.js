@@ -18,9 +18,14 @@ class RoomForm extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addRoom({...this.state.room, id: Date.now()});
-    this.props.hide();
-    this.setState({name: "", description: ""});
+    if(this.state.newName === ""){
+      alert("Room name cannot be an empty string");
+    }
+    else{
+      this.props.addRoom({...this.state.room, id: Date.now()});
+      this.props.hide();
+      this.setState({name: "", description: ""});
+    }
   }
 
   render(){
