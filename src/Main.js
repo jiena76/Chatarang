@@ -67,7 +67,12 @@ class Main extends Component{
     base.syncState("rooms", {
       context: this, 
       state: "rooms", 
-      then: () => {this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]])},
+      then: () => {
+        if(this.state.idList[this.props.match.params.roomName])
+          this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]]);
+        else
+          this.props.history.push(`/rooms/General`);
+      },
     });
     /*
     base.fetch("rooms", {}).then(data => {
