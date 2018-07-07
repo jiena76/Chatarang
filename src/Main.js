@@ -38,6 +38,10 @@ class Main extends Component{
     // make the room "active" when newly added and direct to that path
     this.props.history.push(`/rooms/${room.name}`);
   }
+
+  editRoomName = (room) => {
+
+  }
   
   componentDidMount(){
     // sync idList
@@ -80,6 +84,7 @@ class Main extends Component{
           signOut={this.props.signOut}
           addRoom={this.addRoom}
           setRoom={this.setRoom}  // this.setRoom because it's a class method
+          editRoomName={this.editRoomName}
           rooms={this.state.rooms}
         />
         <Chat 

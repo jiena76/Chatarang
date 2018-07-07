@@ -58,6 +58,7 @@ class RoomList extends Component {
                 key={roomID}
                 /* using [roomName] instead of .roomName since "roomName" is a variable, not string "roomName" */
                 room={this.props.rooms[roomID]}
+                editRoomName={this.props.editRoomName}
               />
             ))
           }

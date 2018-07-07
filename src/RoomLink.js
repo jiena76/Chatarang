@@ -4,14 +4,10 @@ import base from './base'
 import {NavLink} from 'react-router-dom';
 
 // room list links for entering the room and others (del, edit, etc)
-const RoomLink = ({room}) => {
+const RoomLink = ({room, editRoomName}) => {
 
   const removeRoom = (e) => {
     base.remove(`rooms/${room.id}`);
-  }
-
-  const editRoomName = (e) => {
-    // base.update(`rooms/${room.id}`, {name: "Hi"});
   }
 
   if(room.name === "General"){
