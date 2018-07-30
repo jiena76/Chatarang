@@ -70,22 +70,11 @@ class Main extends Component{
       context: this, 
       state: "rooms", 
       then: () => {
-        if(this.state.idList[this.props.match.params.roomName]){
-          // roomExists = ID of the room
-          const roomExists = this.state.idList[this.props.match.params.roomName];
-          this.setRoom(this.state.rooms[roomExists]);
-
-          // base.listenTo(`/rooms/${roomExists}`, {
-          //   context: this,
-          //   then: () => {
-          //     //this.props.history.push(`/rooms/${this.state.rooms[roomExists]}`);
-          //     console.log(this.state.rooms[roomExists]);
-          //   }
-          // });
-        }
+        if(this.state.idList[this.props.match.params.roomName])
+          this.setRoom(this.state.rooms[this.state.idList[this.props.match.params.roomName]]);
         // handles when the requested room is not available
         else
-          this.props.history.push("/rooms/General");
+          this.props.history.push(`/rooms/General`);
       },
     });
     /*

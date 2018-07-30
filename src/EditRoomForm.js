@@ -18,7 +18,7 @@ class EditRoomForm extends Component{
     }
     else{
       this.props.editRoomName(this.props.roomName, this.state.newName);
-      this.props.formVisibility();
+      this.props.hide();
     }
   }
 
