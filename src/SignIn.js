@@ -65,7 +65,6 @@ class SignIn extends Component{
               type="button"
               onClick={this.authenticate}
               className={css(styles.button)}
-              title="Sign in with Google"
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
               Sign in with Google

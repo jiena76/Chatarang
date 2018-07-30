@@ -58,12 +58,8 @@ class RoomForm extends Component{
               onChange={this.handleChange}
             />
             <div className={css(styles.label)}>
-              <button title="Create" type="submit" onClick={this.handleSubmit} className={css(styles.button)}>
-                Create
-              </button>
-              <button title="Cancel" type="button" onClick={this.props.hide} className={css(styles.button)}>
-                Cancel
-              </button>
+              <button type="submit" onClick={this.handleSubmit} className={css(styles.button)}>Create</button>
+              <button type="button" onClick={this.props.hide} className={css(styles.button)}>Cancel</button>
             </div>
           </form>
         </div>
